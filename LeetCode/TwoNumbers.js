@@ -1,46 +1,26 @@
-function twoNumbers(arrOne, arrTwo){
+function twoNumbers(arrOne, arrTwo) {
+  const firstArray = arrOne;
+  const secondArray = arrTwo;
 
-    const firstArray = arrOne;
-    const secondArray = arrTwo;
+  firstArray.reverse();
+  secondArray.reverse();
 
-    firstArray.reverse();
-    secondArray.reverse();
+  let len = 0;
+  let total = [];
+  let acumulator = 0;
+  (firstArray.length > secondArray.length) 
+    ? len = firstArray.length 
+    : len = secondArray.length;
+  
 
-    let sum = [];
-    let total = [];
-    let acumulator = 0;
-    backup = 0;
-    let x;
+  for (x = 0; x < len; x++){
+    console.log(firstArray[x] + secondArray[x]);
+    total.push(firstArray[x] + secondArray[x]);
+  }
 
-
-    for (x = 0; x < firstArray.length; x++){
-        if (firstArray[x] + secondArray[x] <= 9 
-        && firstArray[x] + secondArray[x] > 0){
-            sum.push(firstArray[x] + secondArray[x]);
-        }else{
-            sum.push(0);
-            acumulator += 1;
-        }
-    }
-
-
-    for (i of sum){
-        if (i == 0){
-            i = 0;
-        }
-    }
-
-
-    
-   return "";
-
+  total.pop();
+  return total;
 }
 
-
-
-
-console.log(twoNumbers([2,4,3], [5,6,4]));
-// console.log(twoNumbers([5,4,3], [5,6,4]));
+console.log(twoNumbers([1, 2, 3], [1, 2, 3, 4]));
 // console.log(twoNumbers([5,4,6], [5,6,4]));
-
-
