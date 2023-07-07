@@ -11,7 +11,7 @@ function twoNumbers(arrOne, arrTwo) {
     len = secondArray.length};
 
   for (let x = 0; x < len; x++){
-    console.log(firstArray[x])
+    console.log(typeof(firstArray));
 
   }
 
