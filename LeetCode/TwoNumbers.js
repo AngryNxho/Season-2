@@ -10,18 +10,10 @@ function twoNumbers(arrOne, arrTwo) {
   else { 
     len = secondArray.length};
 
-  
   for (let x = 0; x < len; x++){
-
-    // console.log(firstArray.length);
-    // console.log(secondArray.length);
-
-    if (firstArray.length + secondArray.length ){
-      total.push(firstArray[x] + secondArray[x])
-    }
+    console.log(firstArray[x])
 
   }
-  
 
   console.log(total);
     
