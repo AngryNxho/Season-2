@@ -1,13 +1,9 @@
-let a = [2, 8];
-let b = [8, 2];
+let i= [10];
 let total = [];
+let acum = 1;
 
-for (let x = 0; x < a.length; x++) {
-  op = a[x] + b[x];
-  if (op <= 9 && op >= 0) {
-    total.push(op);
-  } else {
-  }
+for (x of i){
 }
+
 
 console.log(total);

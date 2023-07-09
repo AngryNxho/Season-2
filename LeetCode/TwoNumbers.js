@@ -11,13 +11,19 @@ function twoNumbers(arrOne, arrTwo) {
     ? len = firstArray.length
     : len = secondArray.length
 
-  // console.log(len);
+
+  for (let x = 0; x < len; x++){
+    operator = firstArray[x] + secondArray[x];
+    total.push(operator)
+  }
 
 
+  for (let i of total){
+    while (i.length)
+  }
 
-  // console.log(sum);
     
-  return total;
+  return "";
 }
 
 console.log(twoNumbers([1, 2, 3], [1, 8, 6])); // [2, 10, 9] ||  [2, 0, 0, 1] == [1, 0, 0, 2]
