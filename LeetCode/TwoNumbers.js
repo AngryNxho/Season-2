@@ -3,8 +3,8 @@ function twoNumbers(arrOne, arrTwo) {
   const secondArray = arrTwo;
 
   let len = 0;
+  let firstLoop = [];
   let total = [];
-  let totalFinal = [];
   let sum = 0;
   firstArray.length > secondArray.length
     ? len = firstArray.length
@@ -19,16 +19,35 @@ function twoNumbers(arrOne, arrTwo) {
     else if (secondArray[x] === undefined){
       secondArray[x] = 0;
     }
-    total.push(firstArray[x] + secondArray[x])
+    firstLoop.push(firstArray[x] + secondArray[x])
 
   }
 
-  console.log(total.length);
 
-for (let i = 0; i < total.length; i++){
-  while (i <= total.length){
-    console.log(total[i]);
+for (let i = 0; i < firstLoop.length; i++){
+
+
+  if (firstLoop[i] >= 10){
+    firstLoop[i] = 0;
+    sum += 1;
+
+    while (sum > 0){
+      firstLoop[i + 1] += sum;
+      total.push(firstLoop[i])
+      if (firstLoop[i] == 0 && sum > 0){
+        total.push(sum)
+      }
+      sum -= 1;
+    }
+
+  }else{
+    total.push(firstLoop[i])
   }
+
+
+
+  console.log(total);
+
 }
 
 
