@@ -24,19 +24,15 @@ function twoNumbers(arrOne, arrTwo) {
   }
 
 
-for (let i = 0; i < firstLoop.length; i++){
-
+for (let i = 0; i < len; i++){
 
   if (firstLoop[i] >= 10){
     firstLoop[i] = 0;
+    total.push(firstLoop[i]);
     sum += 1;
 
     while (sum > 0){
       firstLoop[i + 1] += sum;
-      total.push(firstLoop[i])
-      if (firstLoop[i] == 0 && sum > 0){
-        total.push(sum)
-      }
       sum -= 1;
     }
 
@@ -44,13 +40,10 @@ for (let i = 0; i < firstLoop.length; i++){
     total.push(firstLoop[i])
   }
 
-
-
-  console.log(total);
-
+  
 }
 
-
+console.log(total);
 
   return "";
 }
