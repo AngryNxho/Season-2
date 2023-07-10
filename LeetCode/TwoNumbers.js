@@ -4,7 +4,7 @@ function twoNumbers(arrOne, arrTwo) {
 
   let len = 0;
   let total = [];
-  let total2 = [];
+  let totalFinal = [];
   let sum = 0;
   firstArray.length > secondArray.length
     ? len = firstArray.length
@@ -20,26 +20,19 @@ function twoNumbers(arrOne, arrTwo) {
       secondArray[x] = 0;
     }
     total.push(firstArray[x] + secondArray[x])
+
   }
 
-for (let z of total){
-  if (String(z).length > 1){
-    sum += 1;
-    while (String(z).length > 1){
-      z--;
-      if (z === 9 && sum > 0){
-        z = 0;
-        total2.push(z);
-      }else{
-        console.log(4387209482903);
-      }
-    }
-  }else if (String(z).length < 1 && sum > 0){
-    total2.push(z + 1);
+  console.log(total.length);
+
+for (let i = 0; i < total.length; i++){
+  while (i <= total.length){
+    console.log(total[i]);
   }
-  console.log(z, sum);
-  // console.log(total2);
 }
+
+
+
   return "";
 }
 console.log(twoNumbers([1, 2, 3], [1, 8, 6])); // [2, 10, 9] ==  [2, 0, 0, 1] 
