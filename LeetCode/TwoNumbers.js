@@ -1,50 +1,42 @@
-function twoNumbers(arrOne, arrTwo) {
-  const firstArray = arrOne;
-  const secondArray = arrTwo;
+function TwoNumbers(arrOne, arrTwo){
 
-  let len = 0;
-  let firstLoop = [];
-  let total = [];
   let sum = 0;
-  firstArray.length > secondArray.length
-    ? len = firstArray.length
-    : len = secondArray.length
-
+  let total = [];
   
+  arrOne.length > arrTwo.length 
+  ? len = arrOne.length
+  : len = arrTwo.length;
+
 
   for (let x = 0; x < len; x++){
-    if (firstArray[x] === undefined){
-      firstArray[x] = 0;
+    op = arrOne[x] + arrTwo[x];
+    if (op <= 9 && op >= 0){
+      total.push(op);
+    }else if (op > 9){
+      while (op > 9 || op < 0){
+        sum += 1;
+        op = 0;
+        total.push(op);
+      }
+      
     }
-    else if (secondArray[x] === undefined){
-      secondArray[x] = 0;
-    }
-    firstLoop.push(firstArray[x] + secondArray[x])
-
+    
+    
   }
 
-
-for (let i = 0; i < len; i++){
-
-  if (firstLoop[i] >= 10){
-    firstLoop[i] = 0;
-    total.push(firstLoop[i]);
-    sum += 1;
-
+for (let i of total){
+  if (i + sum > 9){
+    i = 0;
     while (sum > 0){
-      firstLoop[i + 1] += sum;
-      sum -= 1;
+      total.push(sum)
+      sum--;
     }
-
-  }else{
-    total.push(firstLoop[i])
   }
-
-  
 }
 
-console.log(total);
-
+console.log(total, sum);
   return "";
 }
-console.log(twoNumbers([1, 2, 3], [1, 8, 6])); // [2, 10, 9] ==  [2, 0, 0, 1] 
+
+
+console.log(TwoNumbers([1, 10, 9], [1, 0, 0])); // 2, 0, 0, 1
