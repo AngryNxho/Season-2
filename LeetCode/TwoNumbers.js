@@ -8,35 +8,26 @@ function TwoNumbers(arrOne, arrTwo){
   : len = arrTwo.length;
 
 
-  for (let x = 0; x < len; x++){
-    op = arrOne[x] + arrTwo[x];
-    if (op <= 9 && op >= 0){
-      total.push(op);
-    }else if (op > 9){
-      while (op > 9 || op < 0){
-        sum += 1;
-        op = 0;
-        total.push(op);
-      }
-      
-    }
-    
-    
+for (let x = 0; x < len; x++){
+  operation = arrOne[x] + arrTwo[x];
+  console.log(arrOne == undefined, arrTwo == undefined);
+  if (9 >= operation ){
+    console.log(`Entra en el primer if con ${operation} `);
+    total.push(operation)
   }
 
-for (let i of total){
-  if (i + sum > 9){
-    i = 0;
-    while (sum > 0){
-      total.push(sum)
-      sum--;
+    if (operation > 9){
+      operation = 0;
+      total.push(operation);
+      console.log(`entra en segundo if con ${operation}`);
     }
-  }
+
 }
 
-console.log(total, sum);
+console.log(total);
+
   return "";
 }
 
 
-console.log(TwoNumbers([1, 10, 9], [1, 0, 0])); // 2, 0, 0, 1
+console.log(TwoNumbers([1, 10, 9, 10, 4], [0, 0, 0, 0])); // 2, 0, 0, 1
