@@ -1,39 +1,34 @@
 function TwoNumbers(arrOne, arrTwo) {
+  let firstLoop = [];
   let total = [];
-  let sum = 0;
-
+  let sum = [];
   arrOne.reverse();
   arrTwo.reverse();
+
   
-  arrOne.length > arrTwo.length ? (len = arrOne.length) : (len = arrTwo.length);
+  arrOne.length > arrTwo.length 
+  ? (len = arrOne.length) 
+  : (len = arrTwo.length);
   
-  for (z of String(len)) {
     for (let i = 0; i < len; i++) {
       if (isNaN(arrOne[i])){
         arrOne.push(0);
       }else{
         arrTwo.push(0)
       }
+      op = String(arrOne[i] + arrTwo[i]);
+      lastIndex = op[op.length - 1];
+      total.push(lastIndex);
+      sum.push(op.length);
       
-      op = arrOne[i] + arrTwo[i];
-      if (op <= 9 && op >= 0) {
-        total.push(op);
-        // console.log(op == 9);
-      }
-       else if (op > 9 || op < 0) {
-        op = 0;
-        sum += 1;
-        total.push(op);
-      }
     }
+    for (x = 1; x < String(total.length); x++){ 
+      total[x] = Number(total[x]) + (sum[x]);
+      console.log();
+     }   
+     
+    return total; 
+    
   }
-
-for (let z = 0; z < total.length; z++){
-  if (total[z] > 9 && total[z] < 0){
-    console.log(2);
-  }
-}  
-return "";
-}
-console.log(TwoNumbers([2, 4, 3], [5, 6, 4])); // 2, 0, 0, 0, 0, 1;
-// console.log(TwoNumbers([0], [0])); // 2, 0, 0, 0, 0, 1;
+  console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
+  //8,9,9,9,0,0,0,1
