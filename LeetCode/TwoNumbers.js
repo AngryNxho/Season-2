@@ -1,7 +1,7 @@
 function TwoNumbers(arrOne, arrTwo) {
   let firstLoop = [];
   let total = [];
-  let sum = [];
+  let sum = 0;
   arrOne.reverse();
   arrTwo.reverse();
 
@@ -17,18 +17,30 @@ function TwoNumbers(arrOne, arrTwo) {
         arrTwo.push(0)
       }
       op = String(arrOne[i] + arrTwo[i]);
+      if (op <= 9 && op >= 0){
+        firstLoop.push(Number(op));
+      }else{
+        sum += 1;
+        firstLoop.push(Number(op));
+      }
+
       lastIndex = op[op.length - 1];
-      total.push(lastIndex);
-      sum.push(op.length);
+    }     
+    for (let z = 1; z < firstLoop.length; z++){
+      firstLoop[z] = (firstLoop[z] + sum - (sum - 1)) 
       
+      
+
+      if (sum > 0){
+        sum -= 1;
+      }
     }
-    for (x = 1; x < String(total.length); x++){ 
-      total[x] = Number(total[x]) + (sum[x]);
-      console.log();
-     }   
-     
-    return total; 
     
+    console.log(firstLoop, sum);
+
+    return ""; 
   }
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
   //8,9,9,9,0,0,0,1
+
+
