@@ -2,8 +2,6 @@ function TwoNumbers(arrOne, arrTwo) {
   let firstLoop = [];
   let total = [];
   let sum = 0;
-  arrOne.reverse();
-  arrTwo.reverse();
 
   
   arrOne.length > arrTwo.length 
@@ -18,25 +16,21 @@ function TwoNumbers(arrOne, arrTwo) {
       }
       op = String(arrOne[i] + arrTwo[i]);
       if (op <= 9 && op >= 0){
-        firstLoop.push(Number(op));
+        firstLoop.push(op);
       }else{
         sum += 1;
-        firstLoop.push(Number(op));
+        firstLoop.push(op);
       }
 
-      lastIndex = op[op.length - 1];
     }     
     for (let z = 1; z < firstLoop.length; z++){
-      firstLoop[z] = (firstLoop[z] + sum - (sum - 1)) 
-      
-      
+      // firstLoop[z] = (firstLoop[z] + sum - (sum - 1)) 
 
+      console.log(firstLoop[z][0]);
       if (sum > 0){
         sum -= 1;
       }
     }
-    
-    console.log(firstLoop, sum);
 
     return ""; 
   }
