@@ -2,7 +2,7 @@ function TwoNumbers(arrOne, arrTwo) {
   let firstLoop = [];
   let total = [];
   let sum = 0;
-
+  let index = [];
   
   arrOne.length > arrTwo.length 
   ? (len = arrOne.length) 
@@ -18,20 +18,14 @@ function TwoNumbers(arrOne, arrTwo) {
       if (op <= 9 && op >= 0){
         firstLoop.push(op);
       }else{
-        sum += 1;
         firstLoop.push(op);
       }
 
+
     }     
     for (let z = 1; z < firstLoop.length; z++){
-      // firstLoop[z] = (firstLoop[z] + sum - (sum - 1)) 
-
-      console.log(firstLoop[z][0]);
-      if (sum > 0){
-        sum -= 1;
-      }
     }
-
+    console.log(index);
     return ""; 
   }
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 

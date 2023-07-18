@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+html{
+    background: linear-gradient(red, purple );
+}
+
+.container{
+    display: grid;
+    place-items: center;
+    height: 500px;
+    width: 50%;
+    background: white;    
+
+}
+
+.box{
+    background-color: red;
+    height: 120px;
+}
