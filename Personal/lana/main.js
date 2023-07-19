@@ -4,15 +4,29 @@ const del = document.querySelector(".delete");
 const lastIndex = document.querySelector(".lastIndex");
 const content = document.querySelector(".content");
 let element;
+let leftCounter = 0;
+let rightCounter = 0;
+let positions = [];
+
+
 
 right.addEventListener("click", function addRight(){
-    element = `RIGHT ${0}`
-    content.appendChild(element)
-    console.log("right");    
+    element = document.createElement("p");
+    element.textContent = ` ${rightCounter}R`;
+    positions.push(element.textContent)
+    console.log(positions);
+    rightCounter++;
+    content.append(positions[positions.length - 1]);
+    
 });
 
 left.addEventListener("click", function addLeft(){
-    console.log("left");    
+    element = document.createElement("p");
+    element.textContent = ` ${leftCounter} L`;
+    positions.push(element.textContent)
+    console.log(positions);
+    leftCounter++;
+    content.append(positions[positions.length - 1]);
 });
 
 del.addEventListener("click", function del(){
