@@ -15,17 +15,19 @@ function TwoNumbers(arrOne, arrTwo) {
         arrTwo.push(0)
       }
       op = String(arrOne[i] + arrTwo[i]);
-      if (op <= 9 && op >= 0){
-        firstLoop.push(op);
-      }else{
-        firstLoop.push(op);
-      }
+      firstLoop.push(op);      
+      
 
 
     }     
-    for (let z = 1; z < firstLoop.length; z++){
+
+
+    for (let z = 0; z < firstLoop.length; z++){
+      len2 = ((firstLoop[z]).length);
+      console.log(String(firstLoop)[firstLoop.length - len2]);
+
     }
-    console.log(index);
+
     return ""; 
   }
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
