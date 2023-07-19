@@ -1,23 +1,55 @@
-*{
+*{  
     margin: 0;
     padding:0;
-}
-
-
-html{
-    background: linear-gradient(red, purple );
+    box-sizing: border-box;
 }
 
 .container{
     display: grid;
-    place-items: center;
-    height: 500px;
-    width: 50%;
-    background: white;    
+    justify-content: center;
 
 }
 
-.box{
-    background-color: red;
-    height: 120px;
+.image{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url(./japan-4k-qbc6mlnwowjbszld.jpg) no-repeat center/cover;
+    filter: blur(5px);
+    
+}
+
+.content{
+    display: grid;
+    position: relative;
+    top: 25%;
+    align-items: center;
+    text-align: center;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    border: solid 3px purple;
+    border-radius: 20px;
+    background: lightpink;
+    overflow: none;
+}
+
+.btns{
+    position:  relative;
+    right: 5%;
+    top: 250%;
+}
+
+
+button{
+    border: solid 2px lightpink;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: purple;
+    color: lightpink;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, .5);
 }
