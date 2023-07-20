@@ -22,15 +22,17 @@ function TwoNumbers(arrOne, arrTwo) {
     }     
 
 
-
-    for (let z = 0; z < firstLoop.length; z++){
+    
+    for (let z = 1; z < firstLoop.length; z++){
       firstLoop[z] = (Number(firstLoop[z][String(firstLoop[z]).length - 1]) + sum - (sum - 1));
-      
+      sum--;
+      if (sum < 0){
+        sum = 0;
+      }
     }
-
-    console.log(firstLoop);
+    console.log(firstLoop, sum);
     return ""; 
-  }
+  }  
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
   //8,9,9,9,0,0,0,1
 
