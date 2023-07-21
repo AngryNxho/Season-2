@@ -20,17 +20,11 @@ function TwoNumbers(arrOne, arrTwo) {
       }
       firstLoop.push(op);      
     }     
-
-
-    
-    for (let z = 1; z < firstLoop.length; z++){
-      firstLoop[z] = (Number(firstLoop[z][String(firstLoop[z]).length - 1]) + sum - (sum - 1));
-      sum--;
-      if (sum < 0){
-        sum = 0;
-      }
+    for (let z = 0; z < firstLoop.length; z++){
+      console.log(firstLoop[z]);
+      // console.log(String(firstLoop[z]).length);
     }
-    console.log(firstLoop, sum);
+    // console.log(firstLoop, sum);
     return ""; 
   }  
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
