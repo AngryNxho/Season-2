@@ -3,7 +3,7 @@ function TwoNumbers(arrOne, arrTwo) {
   let total = [];
   let sum = 0;
   let index = [];
-  
+  let len2;  
   arrOne.length > arrTwo.length 
   ? (len = arrOne.length) 
   : (len = arrTwo.length);
@@ -17,14 +17,11 @@ function TwoNumbers(arrOne, arrTwo) {
       op = String(arrOne[i] + arrTwo[i]);
       if(Number(op) > 9){
         sum++;
+        firstLoop.push(Number(op[op.length - 1]) + sum - (sum - 1));
       }
-      firstLoop.push(op);      
     }     
-    for (let z = 0; z < firstLoop.length; z++){
-      console.log(firstLoop[z]);
-      // console.log(String(firstLoop[z]).length);
-    }
-    // console.log(firstLoop, sum);
+
+    console.log(firstLoop);
     return ""; 
   }  
   console.log(TwoNumbers([9,9,9,9,9,9,9], [9,9,9,9])); 
