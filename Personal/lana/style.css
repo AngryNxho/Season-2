@@ -2,7 +2,9 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
+    font-family: Roboto, sans-serif, Fira Code;
 }
+
 
 .container{
     display: grid;
@@ -24,6 +26,7 @@
     position: relative;
     top: 25%;
     text-align: left;
+    justify-content: center;
     height: 500px;
     width: 500px;
     position: relative;
@@ -32,6 +35,7 @@
     background: lightpink;
     overflow: none;
     font-size: 30px;
+    padding: 15px;
         
 }
 
@@ -39,13 +43,13 @@
 
 .btns{
     position:  relative;
-    right: 5%;
+    right: 45px;
     top: 450%;
 }
 
 button{
     border: solid 2px lightpink;
-    padding: 5px;
+    padding: 15px;
     border-radius: 10px;
     background-color: purple;
     color: lightpink;
