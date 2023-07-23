@@ -16,4 +16,52 @@
         </div>
     
         <script src="./main.js"></script>
+        <script src="./server.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pg-promise@10.10.0/lib/pg-promise.js"></script>
+        
+<!-- index.html -->
+<!-- Your existing HTML code -->
+
+
+<script>
+  function addToDatabase(value) {
+    fetch('/addData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ value: value }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to add data to the database');
+        }
+        console.log('Data added to the database successfully!');
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+  // Your existing client-side JavaScript code
+
+  // Example of adding data to the database when the "right" button is clicked
+  right.addEventListener('click', function addRight() {
+    element = document.createElement('p');
+    element.textContent = ` ${rightCounter}R`;
+    positions.push(element.textContent);
+    rightCounter++;
+    content.append(positions[positions.length - 1]);
+    document.body.classList.add('borderColor');
+
+    // Add data to the database
+    addToDatabase(element.textContent);
+  });
+</script>
+
+
+
+
+
+        
 </html>

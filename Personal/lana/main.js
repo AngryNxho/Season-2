@@ -37,3 +37,5 @@ del.addEventListener("click", function del(){
 lastIndex.addEventListener("click", function last(){
     console.log("last");    
 });
+
+
