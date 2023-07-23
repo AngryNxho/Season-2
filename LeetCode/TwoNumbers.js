@@ -15,10 +15,17 @@ function TwoNumbers(arrOne, arrTwo) {
         arrTwo.push(0)
       }
       op = String(arrOne[i] + arrTwo[i]);
-      if(Number(op) > 9){
-        sum++;
-        firstLoop.push(Number(op[op.length - 1]) + sum - (sum - 1));
+      console.log(op);
+      if (i == 0){
+        firstLoop.push(Number(op[op.length - 1]) )
+      } else{
+        if(Number(op) > 9){
+          sum++;
+          firstLoop.push(Number(op[op.length - 1]) + sum - (sum - 1));
+        } 
       }
+
+     
     }     
 
     console.log(firstLoop);

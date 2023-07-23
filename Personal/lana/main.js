@@ -3,6 +3,8 @@ const left = document.querySelector(".left");
 const del = document.querySelector(".delete");
 const lastIndex = document.querySelector(".lastIndex");
 const content = document.querySelector(".content");
+
+let addStyle = document.querySelector(".borderColor");
 let element;
 let leftCounter = 1;
 let rightCounter = 1;
@@ -16,6 +18,7 @@ right.addEventListener("click", function addRight(){
     positions.push(element.textContent)
     rightCounter++;
     content.append(positions[positions.length - 1]);
+    document.body.classList.add("borderColor");
     
 });
 
