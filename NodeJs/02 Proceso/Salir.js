@@ -1,10 +1,18 @@
 let i = 0;
-setInterval(() => {
-   i += 10;
-   console.log(`cargando... ${i}%`); 
+
+const id = setInterval(() => {
+    i += 10;
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(`cargando... ${i}%`);
+    
+    
+    
+    if (i == 100){
+        clearInterval(id);
+    }
 }, 200);
 
-
 process.on('exit', () => {
-    console.log('Find del proceso');
+    console.log('\nFin del proceso');
 });
