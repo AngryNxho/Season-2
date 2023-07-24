@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Website with PostgreSQL</title>
+  </head>
+  <body>
+    <h1>Users</h1>
+    <ul id="userList">
+      <!-- Users will be dynamically added here -->
+    </ul>
+
+    <form id="userForm">
+      <input type="text" placeholder="Name" name="name" required />
+      <input type="email" placeholder="Email" name="email" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const userList = document.getElementById("userList");
+        const userForm = document.getElementById("userForm");
+
+        // Function to fetch and display users
+        const getUsers = async () => {
+          const response = await fetch("/api/users");
+          const users = await response.json();
+
+          userList.innerHTML = "";
+          users.forEach((user) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${user.name} - ${user.email}`;
+            userList.appendChild(listItem);
+          });
+        };
+
+        // Function to add a new user
+        const addUser = async (event) => {
+          event.preventDefault();
+
+          const formData = new FormData(userForm);
+          const name = formData.get("name");
+          const email = formData.get("email");
+
+          await fetch("/api/users", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email }),
+          });
+
+          userForm.reset();
+          getUsers();
+        };
+
+        // Fetch users when the page loads
+        getUsers();
+
+        // Add event listener to the form
+        userForm.addEventListener("submit", addUser);
+      });
+    </script>
+  </body>
+</html>
