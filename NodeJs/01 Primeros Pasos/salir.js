@@ -5,14 +5,11 @@ const id = setInterval(() => {
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
     process.stdout.write(`cargando... ${i}%`);
-    
-    
-    
-    if (i == 100){
+    if (i === 100){
         clearInterval(id);
     }
 }, 200);
 
-process.on('exit', () => {
-    console.log('\nFin del proceso');
+process.on('exit', () =>{
+    console.log("\nFin del proceso.");
 });
