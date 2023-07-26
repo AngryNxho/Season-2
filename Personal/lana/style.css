@@ -39,7 +39,12 @@
 }
 
 
-
+.content button{
+    display: grid;
+    justify-content: center;
+    padding: 15px;
+    
+}
 
 .btns{
     position:  relative;
