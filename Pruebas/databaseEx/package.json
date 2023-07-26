@@ -1,0 +1,11 @@
+{
+  "name": "postgres-nodejs-website",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "pg": "latest"
+  }
+}
