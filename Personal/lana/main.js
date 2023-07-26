@@ -1,3 +1,7 @@
+
+
+
+
 const right = document.querySelector(".right");
 const left = document.querySelector(".left");
 const del = document.querySelector(".delete");
@@ -66,6 +70,7 @@ left.addEventListener("click", function addLeft() {
   console.log(positions[positions.length - 1]);
 });
 
+
 lastIndex.addEventListener("click", () => {
   stats.textContent = "";
   stats.style.textAlign = "center";
@@ -75,47 +80,3 @@ lastIndex.addEventListener("click", () => {
   }, 5000);
 });
 
-
-
-// ... Your existing JavaScript code ...
-
-const saveButton = document.querySelector('.save');
-const displayButton = document.querySelector('.display');
-
-saveButton.addEventListener('click', async () => {
-  const username = prompt('Enter your username:');
-  const email = prompt('Enter your email:');
-
-  if (username && email) {
-    try {
-      const response = await fetch('/save', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email }),
-      });
-      if (response.ok) {
-        alert('User information saved successfully');
-      } else {
-        alert('Error saving user information');
-      }
-    } catch (error) {
-      console.error('Error saving user information:', error);
-    }
-  }
-});
-
-displayButton.addEventListener('click', async () => {
-  try {
-    const response = await fetch('/users');
-    const users = await response.json();
-    let message = 'Users:\n';
-    users.forEach((user) => {
-      message += `Username: ${user.username}, Email: ${user.email}\n`;
-    });
-    alert(message);
-  } catch (error) {
-    console.error('Error fetching user information:', error);
-  }
-});
