@@ -42,12 +42,14 @@
 .content button{
     display: grid;
     justify-content: center;
-    padding: 15px;
+    padding: 30px;
     
 }
 
 .btns{
+    display: inline-block;
     position:  relative;
+    text-align: center;
     top: 280%;
 }
 
@@ -69,3 +71,29 @@ button:hover{
     float: right;
 }
 
+.hidden{
+    display: none;
+}
+
+.footer{
+    top: 120px;
+    left: 50%;
+    position: absolute;
+    height: 60px;
+    width: 80px;
+    background-color: rebeccapurple;
+    border: solid 1px white;
+    border-radius: 10px;
+
+}
+
+.stats{
+    color: white;
+    position: relative;
+    top: 20px;
+}
+
+.login{
+    display: grid;
+    justify-content: center;
+}
