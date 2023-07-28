@@ -14,19 +14,31 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      console.log(op);
 
+      if (op > 9){
+        sum++;
+      }else if (op <= 9 && sum === 0){
+        total.push(op)
+      }
+
+       for (let z = 0; z <= sum; z++){
+         if (op > 9 && sum > 0){
+           lastIndex = Number(String(op)[String(op).length - 1]);
+          //  console.log(lastIndex > 9);
+           total.push(lastIndex);
+           sum--;
+         }
+       }
     }      
     
-
-
-    console.log(total, sum);
+    console.log(total);
     return ""; 
-    // `total: ${total} - Adicionador: ${sum}`;
+     
   }
   console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
   // console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
   //8,9,9,9,0,0,0,1
+
 
 
 
