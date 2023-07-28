@@ -1,5 +1,6 @@
 function addTwoNumbers(l1, l2) {
   let total = [];
+  let total2 = [];
   let len;
   let sum  = 0;
   let index = [];
@@ -19,17 +20,25 @@ function addTwoNumbers(l1, l2) {
   
       if (i === 0){
         total.push(Number(String(op)[String(op).length - 1]));
-      }
-
-      if (op > 9 && i > 0){
-        sum++;
-        total.push(op + sum);
-          sum--;
-          lastIndex = Number(String(total)[String(total).length - 1]);
-          index.push(Number(String(op).length));
+      }else{
+        
+        if (op > 9){
+          sum++;
+          // index.push(Number(String(op).length));
+          // lastIndex = Number(String(total)[String(total).length - 1]);
         }
-    }      
-    console.log(`sum: ${sum} Total: ${total} Index: ${index}`);
+        let opSum = (op +  sum - (sum - 1));
+        if (opSum <= 9 && opSum >= 0 && sum > 0){
+          total.push(opSum);
+          sum--;
+        }else{
+          total.push(Number(String(op)[String(op).length - 1] )+ sum - (sum - 1));
+        }
+         
+      }
+    }
+
+    console.log(`sum: ${sum} Total: ${total}`);
     return ""; 
      
   }
