@@ -1,13 +1,13 @@
-// console.log(process.argv);
+ console.log(process.argv);
 
-function obtenerValor(parametro){
+function getValue(parameter){
 
-    const i = process.argv.indexOf(parametro);
-    return process.argv[i + 1];
+    // i will give us the index of the parameter
+    const i = process.argv.indexOf(parameter);
+    
+    return process.argv[i + 1];    
 }
 
 
-
-
-console.log(obtenerValor('install'));
-console.log(obtenerValor('-D'));
+console.log(getValue('install'));
+console.log(getValue('-D'));
