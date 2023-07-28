@@ -16,32 +16,19 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      
-      
-      if (op > 9){
-        sum++;
-        total.push(op);
-        index.push(Number(String(op).length));
-      }else if (op <= 9 && op >= 0){
-        total.push(op)
-        index.push(Number(String(op).length));      }
-      
-      
-    }      
-    
-    for (let z = 0; z < total.length; z++){
-      // lastIndex = Number(String(total)[String(total).length - 1]);
-      forLength = ([String(total[z]).length] - 1);
+  
+      if (i === 0){
+        total.push(Number(String(op)[String(op).length - 1]));
+      }
 
-      if (index[z] > 1 && sum > 0){
-        total[z] = Number(String(total[z])[forLength]);
-      }
-      
-      if (sum > 0 && z !== 0){
-        lessSum = sum - (sum - 1)
-      }
-    }
-    
+      if (op > 9 && i > 0){
+        sum++;
+        total.push(op + sum);
+          sum--;
+          lastIndex = Number(String(total)[String(total).length - 1]);
+          index.push(Number(String(op).length));
+        }
+    }      
     console.log(`sum: ${sum} Total: ${total} Index: ${index}`);
     return ""; 
      
