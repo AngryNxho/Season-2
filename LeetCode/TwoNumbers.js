@@ -1,6 +1,6 @@
 function addTwoNumbers(l1, l2) {
-  let opBackup = [];
   let total = [];
+  let total2 = [];
   let len;
   let sum  = 0;
   let index = [];
@@ -17,22 +17,10 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      if (op > 9 && i > 0){
-        sum++;
-      }
-      console.log(String(op).length, sum);
-      console.log(`${l1[i]} + ${l2[i]} = ${op + (sum > 0 ? + sum: 0) } `);
-      sum--;
-      if (sum < 0){
-        sum = 0;
-      }
-
-      }
-      
-    // console.log(`sum: ${sum} | Total/index: ${total} | ${index} | Backup: ${opBackup}`);
-    // |index.push(Number(String(op).length));
-    // total.push(Number(String(op)[String(op).length - 1]));
-
+  
+    }
+  
+    console.log(`sum: ${sum} Total: ${total}`);
     return ""; 
      
   }
