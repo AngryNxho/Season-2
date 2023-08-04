@@ -23,11 +23,8 @@ function addTwoNumbers(l1, l2) {
       }else{
         sum++;
         console.log(String(op).length)
-        total.push(op)
-        // let totalSum = 
-        // (Number(String(op)[String(op).length - 1]) + sum); 
-        // console.log(totalSum > 9);
-        // total.push(totalSum);
+        total.push(op + sum);
+
         sum--;
       }
   }
