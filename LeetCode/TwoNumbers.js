@@ -22,6 +22,7 @@ function addTwoNumbers(l1, l2) {
         total.push(Number(String(op)[String(op).length - 1]));
       }else{
         sum++;
+        console.log(String(op).length)
         total.push(op)
         // let totalSum = 
         // (Number(String(op)[String(op).length - 1]) + sum); 
