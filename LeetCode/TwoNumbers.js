@@ -19,19 +19,17 @@ function addTwoNumbers(l1, l2) {
       op = l1[i] + l2[i];
 
       if (i === 0){
-        total.push(Number(< String(op)[String(op).length - 1]));
+        total.push(Number(String(op)[String(op).length - 1]));
       }else{
-        if (op <= 9 && op >= 0 && sum){
-          total.push(op);
-  
-        }else if (op > 9){
-          sum++;
-          total.push(Number(String(op)[String(op).length - 1]) + sum);
-          sum--;
-        }
+        sum++;
+        total.push(op)
+        // let totalSum = 
+        // (Number(String(op)[String(op).length - 1]) + sum); 
+        // console.log(totalSum > 9);
+        // total.push(totalSum);
+        sum--;
       }
-    }
-    
+  }
     console.log(total);
     return ""; 
      
