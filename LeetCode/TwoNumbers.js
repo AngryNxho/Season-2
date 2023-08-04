@@ -23,7 +23,8 @@ function addTwoNumbers(l1, l2) {
       }else{
         sum++;
         console.log(String(op).length)
-        total.push(op + sum);
+        let sumTotal = (op + sum);  
+        total.push(sumTotal);
 
         sum--;
       }
