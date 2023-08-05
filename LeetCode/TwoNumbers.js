@@ -28,8 +28,12 @@ function addTwoNumbers(l1, l2) {
 
   for (let z = 0; z < total.length; z++){
     if (z === 0){
-      console.log(total[0]);
-  
+      console.log((Number(String(total[z])[String(total[z]).length - 1])));
+    }else{
+      if (sum > 0){
+        let sumT = sum - (sum - 1)
+        console.log(total[z] + sumT);
+      }
     }
   }
     return ""; 
