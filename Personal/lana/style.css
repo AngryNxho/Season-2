@@ -5,14 +5,40 @@
     font-family: Roboto, sans-serif, Fira Code;
 }
 
+.loginBox{     
+    display: grid;
+    align-items: center;
+    background: linear-gradient(#ffafcc, #cdb4db) no-repeat;
+    min-height: 100%;
+}
+
+.login{
+    display: grid;
+    justify-self: center;
+}
+
+input{
+    text-align: center;
+    margin-top: 10px;
+    background-color: white;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+}
+.send{
+    margin-top: 5px;
+    border: solid 1px white;
+    position: relative;
+    left: 60px;
+}
 
 .container{
     display: grid;
     justify-content: center;
-
 }
 
 .image{
+    top: 0;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -27,7 +53,7 @@
     text-align: center;
     justify-content: center;
     height: 500px;
-    width: 620px;
+    width: 635px;
     position: relative;
     border: solid 3px purple;
     border-radius: 20px;

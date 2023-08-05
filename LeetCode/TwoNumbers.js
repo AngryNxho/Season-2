@@ -17,12 +17,27 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      // (Number(String(op)[String(op).length - 1]));)
+      // (Number(String(op)[String(op).length - 1]));
 
       if (op > 9 && i > 0){
         sum++;
-        console.log(op + sum - (sum - 1));
       }
+    
+    totalSum = op + sum;
+    if (String(totalSum)[String(totalSum).length - 1] === '1' && String(totalSum).length > 1){
+      totalSum -= 1;
+      sum++;
+    }
+    total.push(totalSum);
+    sum--;
+    //  console.log(String(op).length >= 2);
+
+     if (sum < 0){
+      sum = 0;
+     }
+
+
+     
 
   }
 
