@@ -17,19 +17,21 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
+      // (Number(String(op)[String(op).length - 1]));)
 
-      if (i === 0){
-        total.push(Number(String(op)[String(op).length - 1]));
-      }else{
+      if (op > 9){
         sum++;
-        console.log(String(op).length)
-        let sumTotal = (op + sum);  
-        total.push(sumTotal);
-
-        sum--;
       }
+      total.push(op);
   }
-    console.log(total);
+
+
+  for (let z = 0; z < total.length; z++){
+    if (z === 0){
+      console.log(total[0]);
+  
+    }
+  }
     return ""; 
      
   }
