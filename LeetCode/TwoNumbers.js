@@ -19,23 +19,14 @@ function addTwoNumbers(l1, l2) {
       op = l1[i] + l2[i];
       // (Number(String(op)[String(op).length - 1]));)
 
-      if (op > 9){
+      if (op > 9 && i > 0){
         sum++;
+        console.log(op + sum - (sum - 1));
       }
-      total.push(op);
+
   }
 
-
-  for (let z = 0; z < total.length; z++){
-    if (z === 0){
-      console.log((Number(String(total[z])[String(total[z]).length - 1])));
-    }else{
-      if (sum > 0){
-        let sumT = sum - (sum - 1)
-        console.log(total[z] + sumT);
-      }
-    }
-  }
+    console.log(total, sum);
     return ""; 
      
   }
