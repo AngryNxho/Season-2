@@ -30,17 +30,11 @@ function addTwoNumbers(l1, l2) {
     }
     total.push(totalSum);
     sum--;
-    //  console.log(String(op).length >= 2);
 
      if (sum < 0){
       sum = 0;
      }
-
-
-     
-
   }
-
     console.log(total, sum);
     return ""; 
      
