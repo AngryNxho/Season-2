@@ -1,20 +1,45 @@
 <html>
+    
+    <link rel="stylesheet" href="style.css">
+    <div class="container">
 
-    <h1 id="tittle">Welcome to your fav movies</h1>
-    <p>This survey will make you choose some of my favorites movies</p>
+        <div class="blur">
+            
+        </div>
 
-    <form id="survey-form">
-        <label id="name-label">Name</label>
-        <input  type="text" id="name" placeholder="Enter your name" required>
-        <label id="email-label">Email</label>
-        <input  type="email" id="email" placeholder="Enter your Email" required>
-        <label id="number-label">Age <small>(optional)</small></label>
-        <input type="number" id="number" min="0" max="100" placeholder="Age">
-        <label>Favorite movie genres:</label>
-        <select id="dropdown">
-            <option>Drama</option>
-            <option>Action</option>
-            <option>Thriller</option>
-        </select>
-    </form>
+        <div class="content">
+            <h1 id="tittle">Welcome to your fav movies
+            <br>
+            <small>This survey will make you choose some of my favorites movies</small>
+
+            
+            <br><br><br>
+
+            <form id="survey-form" action="">
+                <label id="name-label">Name</label>
+                <input  type="text" id="name" placeholder="Enter your name" required>
+                <label id="email-label">Email</label>
+                <input  type="email" id="email" placeholder="Enter your Email" required>
+                <label id="number-label">Age <small>(optional)</small></label>
+                <input type="number" id="number" min="0" max="100" placeholder="Age">
+                <label>Favorite movie genres:</label>
+                <select id="dropdown">
+                    <option>Drama</option>
+                    <option>Action</option>
+                    <option>Thriller</option>
+                </select>
+                <label for="interstellar"><input type="checkbox" id="interstellar">Interstellar</label>
+                <label for="inception"><input type="checkbox" id="inception">Inception</label>
+                <label for="oppenheimer"><input type="checkbox" id="oppenheimer">Oppenheimer</label>
+                <input type="submit" id ="submit">
+                <textarea placeholder="Tell us another Chris Nolan film"></textarea>
+            </form>
+
+
+
+        </div>
+
+        
+    </div>
+    
 </html>
