@@ -40,7 +40,7 @@ function addTwoNumbers(l1, l2) {
     return ""; 
      
   }
-  console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
+  // console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
   console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
   //8,9,9,9,0,0,0,1
 
