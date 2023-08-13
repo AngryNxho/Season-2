@@ -4,7 +4,8 @@ let phrases = ["Feliz Cumpleaños Fran!!!","Pasalo excelente y recuerda lo que d
 "Y tendras un futuro brillante", 
 "Asi que decidí hacerte este pequeño engañito para el día de tu cumple",
 "quiero recordarte que tu familia siempre estará para ti.",
-"y que no importa cual sea el problema, puedes contar con nosotros"];
+"y que no importa cual sea el problema, puedes contar con nosotros",
+"Disfruta que el camino continúa"];
 
 const text = document.getElementById("text");
 const button = document.querySelector(".btn");
@@ -21,7 +22,7 @@ button.addEventListener("click",  function(){
             x= 0
             clearInterval(interval)
         }
-    },3000)
+    },3500)
     
 })
 
