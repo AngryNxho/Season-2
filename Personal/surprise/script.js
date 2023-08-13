@@ -9,9 +9,11 @@ let phrases = ["Hola Fran :D","Te hice esta pequeña pagina para celebrar el dí
 const text = document.getElementById("text");
 const button = document.querySelector(".btn");
 
-let x = 0;
+let x = 1;
+
 
 button.addEventListener("click",  function(){
+    text.textContent = phrases[0];
     const interval = setInterval(() => {
         console.log(phrases[x]);
         text.textContent = phrases[x];
@@ -21,10 +23,11 @@ button.addEventListener("click",  function(){
             x= 0
             clearInterval(interval)
         }
-    },5500)
+    },5000)
+
+   
     
 })
-
 
 
 
