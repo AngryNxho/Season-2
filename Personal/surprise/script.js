@@ -1,32 +1,35 @@
 let phrases = ["Feliz Cumpleaños Fran!!!","Pasalo excelente y recuerda lo que dice el bromas",
 "Smile and put on a happy face", 
 "Se que te irá muy bien en tu tesis",
-"Y tendras un futur brillante", 
+"Y tendras un futuro brillante", 
 "Asi que decidí hacerte este pequeño engañito para el día de tu cumple",
-"and i know it makes you nervous, but i promise you it's WORTH IT",
-"To show 'em everything you kept inside",
-"Dont hide",
 "quiero recordarte que tu familia siempre estará para ti.",
-"Come out and play"];
-let time = [500, 1000];
+"y que no importa cual sea el problema, puedes contar con nosotros"];
 
+const text = document.getElementById("text");
+const button = document.querySelector(".btn");
 
-const times = function(){
-    for (let x = 0; x < phrases.length;){
-        console.log(phrases[setInterval(()=> {
+let x = 0;
+
+button.addEventListener("click",  function(){
+    const interval = setInterval(() => {
+        console.log(phrases[x]);
+        text.textContent = phrases[x];
+        if (x < phrases.length){
             x++;
-        },500)]);
-        x++;
-    }
-
-}
-
-function displayMessage(phrases){
-    times();
-    return "";
-}
+        }else{
+            x= 0
+            clearInterval(interval)
+        }
+    },3000)
+    
+})
 
 
-console.log(displayMessage(phrases, null));
+
+
+
+
+
 
 

@@ -1,0 +1,47 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    background: url(https://wallpapercave.com/wp/wp2456553.jpg) center/cover;
+    height: 100%;
+    width: 100%;
+    margin: 0;    
+}
+
+.box{
+    height: 500px;
+    width: 500px;
+    background: rgba(0, 0, 0, .8);
+    color: white;
+}
+
+.box h1{
+    position: relative;
+    margin: 40px;
+    top: 180px;
+    text-align: center;
+}
+
+.centerBtn{
+    display: grid;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    width: 150px;
+    margin: auto;
+    bottom: 150px;
+    
+}
+button{
+    border-radius: 10px;
+    background-color: #ff006e;
+    color: white;
+    font-size: 20px;
+}
+

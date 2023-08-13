@@ -1,10 +1,9 @@
 let array = ["h", "o", "l", "a"];
 let a = 0;
-const time  = function(){
-    setInterval(() => {
+const time = setInterval(() => {
         console.log(array[a]);
         a++;
-    },1000)
-}
-
-time();
+        if (a === array.length){
+            clearInterval(time)
+        }
+    },1000);
