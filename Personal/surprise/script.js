@@ -1,11 +1,10 @@
-let phrases = ["Feliz Cumpleaños Fran!!!","Pasalo excelente y recuerda lo que dice el bromas",
-"Smile and put on a happy face", 
-"Se que te irá muy bien en tu tesis",
-"Y tendras un futuro brillante", 
-"Asi que decidí hacerte este pequeño engañito para el día de tu cumple",
-"quiero recordarte que tu familia siempre estará para ti.",
-"y que no importa cual sea el problema, puedes contar con nosotros",
-"Disfruta que el camino continúa"];
+let phrases = ["Hola Fran :D","Te hice esta pequeña pagina para celebrar el día de tu cumpleaños"
+,"Te deseo un feliz día y que disfrutes dentro de lo que la u te lo permita"
+,"Quiero que tengas claro que eres una artista y que no podías haber elegido mejor carrera"
+,"Mientras los demás hacen los proyectos para pasar, tu buscas un buen resultado"
+,"Admiro tu fuerza de voluntad"
+,"Todos te queremos mucho <3"
+,"Nuevamente, FELIZ CUMPLEAÑOS!!!!"]
 
 const text = document.getElementById("text");
 const button = document.querySelector(".btn");
@@ -22,7 +21,7 @@ button.addEventListener("click",  function(){
             x= 0
             clearInterval(interval)
         }
-    },3500)
+    },5500)
     
 })
 
