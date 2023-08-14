@@ -3,6 +3,7 @@ html{
     padding: 0;
     box-sizing: border-box;
     font-family: Montserrat;
+    min-height: 100%;
 }
 
 .container{
@@ -35,13 +36,13 @@ html{
     height: 50px;
     width: 150px;
     margin: auto;
-    bottom: 150px;
+    bottom: 5px;
     
 }
 button{
     border-radius: 10px;
     background-color: #ff006e;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
