@@ -1,9 +1,8 @@
 function addTwoNumbers(l1, l2) {
   let total = [];
-  let total2 = [];
+  let index = [];
   let len;
   let sum  = 0;
-  let index = [];
 
   l1.length > l2.length
   ? (len = l1.length)
@@ -17,28 +16,18 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      // (Number(String(op)[String(op).length - 1]));
 
-      if (op > 9 && i > 0){
+      if (op > 9){
         sum++;
       }
-    
-    totalSum = op + sum;
-    if (String(totalSum)[String(totalSum).length - 1] === '1' && String(totalSum).length > 1){
-      totalSum -= 1;
-      sum++;
+      total.push(op)
     }
-    total.push(totalSum);
-    sum--;
 
-     if (sum < 0){
-      sum = 0;
-     }
-  }
 
-    console.log(total, sum);
+    
+    
+    console.log(total);
     return ""; 
-     
   }
   // console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
   console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));

@@ -1,9 +1,7 @@
-let array = ["h", "o", "l", "a"];
-let a = 0;
-const time = setInterval(() => {
-        console.log(array[a]);
-        a++;
-        if (a === array.length){
-            clearInterval(time)
-        }
-    },1000);
+let n = [10];
+let m = []
+let sum = 0;
+
+for (let x of n){
+    console.log(sum);
+}
