@@ -49,7 +49,6 @@ input{
 
 .content{
     display: grid;
-    top: 25%;
     text-align: center;
     justify-content: center;
     height: 500px;
@@ -65,18 +64,11 @@ input{
 }
 
 
-.content button{
-    display: grid;
-    justify-content: center;
-    padding: 30px;
-    
-}
 
 .btns{
     display: inline-block;
     position:  relative;
     text-align: center;
-    top: 280%;
 }
 
 button{
@@ -123,3 +115,29 @@ button:hover{
     display: grid;
     justify-content: center;
 }
+
+/* Animation definition */
+@keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+  .fadeOut {
+    animation: fadeOut 0.3s ease forwards;
+  }
+  
+
+  /* Your existing styles */
+
+.content {
+    display: flex; /* Use flex display to make elements stack horizontally */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items horizontally to the start */
+    flex-wrap: wrap; /* Allow elements to wrap to a new row when needed */
+  }
+  

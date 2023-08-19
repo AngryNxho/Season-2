@@ -1,13 +1,56 @@
+<!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="style.css">
-<div class="loginBox">
-    <div class="login">
-        <input type="email">
-        <input type="password">
-        <a href="./page.html"><button class="send">Enviar</button></a>
+<head>
+  <!-- Include Axios library -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <!-- Your HTML content -->
 
-    </div>
-</div>
+  <button id="saveButton">Save Progress</button>
+  <button id="loadButton">Load Progress</button>
 
+  <script>
+    const userId = 'user123';
 
+    document.getElementById('saveButton').addEventListener('click', () => {
+      const progressData = 'some progress data';
+      axios.post('/save-progress', { userId, progressData })
+        .then(response => {
+          console.log(response.data.message);
+        })
+        .catch(error => {
+          console.error(error.response.data.error);
+        });
+    });
+
+    document.getElementById('loadButton').addEventListener('click', () => {
+      axios.get(`/load-progress/${userId}`)
+        .then(response => {
+          console.log('Loaded progress:', response.data.progressData);
+        })
+        .catch(error => {
+          console.error(error.response.data.error);
+        });
+    });
+
+    // Example: Replace 'http://localhost:3000' with your actual backend URL
+axios.post('http://localhost:3000/save-progress', { userId, progressData })
+.then(response => {
+  console.log(response.data.message);
+})
+.catch(error => {
+  console.error(error.response.data.error);
+});
+
+axios.get(`http://localhost:3000/load-progress/${userId}`)
+.then(response => {
+  console.log('Loaded progress:', response.data.progressData);
+})
+.catch(error => {
+  console.error(error.response.data.error);
+});
+
+  </script>
+</body>
 </html>

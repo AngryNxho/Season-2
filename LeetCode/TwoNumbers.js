@@ -16,18 +16,22 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-      total.push(op);
+      if (op === 10){
+        op = String(op).length - String(op).length
+        sum++;
+        total.push(op)
+        console.log(op);
+      }else{
+        total.push(op + sum)
+      }
       
     }
-    for (let x = 0; x < total.length; x++){
-      console.log(total[x] + total[++x]);
-    }    
       
-    // console.log(total, index);
+    console.log(total);
     return ""; 
   }
-  // console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
-  // console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
+  console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
+  console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
   //8,9,9,9,0,0,0,1
 
 
