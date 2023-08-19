@@ -16,21 +16,18 @@ function addTwoNumbers(l1, l2) {
       }
 
       op = l1[i] + l2[i];
-
-      if (op > 9){
-        sum++;
-      }
-      total.push(op)
+      total.push(op);
+      
     }
-
-
-    
-    
-    console.log(total);
+    for (let x = 0; x < total.length; x++){
+      console.log(total[x] + total[++x]);
+    }    
+      
+    // console.log(total, index);
     return ""; 
   }
   // console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
-  console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
+  // console.log(addTwoNumbers([9,9,9,9,9,9,9], [9,9,9,9]));
   //8,9,9,9,0,0,0,1
 
 
