@@ -15,19 +15,14 @@ function addTwoNumbers(l1, l2) {
         l2.push(0)
       }
 
+      // String(op).length - String(op).length
       op = l1[i] + l2[i];
-      if (op === 10){
-        op = String(op).length - String(op).length
-        sum++;
-        total.push(op)
-        console.log(op);
-      }else{
-        total.push(op + sum)
-      }
       
+      total.push(op + sum);
     }
-      
+    
     console.log(total);
+    
     return ""; 
   }
   console.log(addTwoNumbers([2, 4, 3], [5, 6, 4])); // 8, 0, 7
