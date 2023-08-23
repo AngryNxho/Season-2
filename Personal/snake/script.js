@@ -1,19 +1,23 @@
 const snake = document.getElementById("snake")
-let horizontalSize = 25;
-let verticalSize = 25;
+let horizontalSize = 0;
+let verticalSize = 0;
 function test(e, margin){
     // console.log(e.key);
-    console.log(e.key === "ArrowUp");
+    
     if (e.key === "ArrowRight"){
-        snake.style.marginLeft = horizontalSize
         horizontalSize += 25
-        console.log(horizontalSize);
+        console.log(e.key);
     }else if (e.key === "ArrowLeft"){
-        snake.style.marginRight = horizontalSize
-        horizontalSize += 25
-        console.log(horizontalSize);
-    }
+        horizontalSize -= 25
+        console.log(e.key);
+    }else if (e.key === "ArrowUp"){
+        verticalSize -= 25;
+    }else{
+        verticalSize += 25;
 
+    }
+    snake.style.marginLeft = horizontalSize
+    snake.style.marginTop = verticalSize
 }
 
 document.addEventListener("keydown", test);
