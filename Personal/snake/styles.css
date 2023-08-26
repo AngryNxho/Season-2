@@ -1,6 +1,6 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -11,18 +11,17 @@
     justify-content: center;
 }
 
+
 .box{
     display: grid;
-    justify-content: center;
+    place-items: center;
+    border: solid 15px black;
     height: 500px;
     width: 500px;
     background: red;
 }
 
 #snake{
-    position: relative;
-    display: grid;
-    text-align: center;
     height: 25px;
     width: 25px;
     background: white;
