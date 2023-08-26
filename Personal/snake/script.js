@@ -1,4 +1,5 @@
 const snake = document.getElementById("snake");
+const box = document.querySelector(".box");
 let horizontalSize = 0;
 let verticalSize = 0;
 function test(e){
@@ -20,6 +21,15 @@ function test(e){
     }
     snake.style.marginLeft = horizontalSize;
     snake.style.marginBottom = verticalSize;
+    if (horizontalSize >= 450 || horizontalSize <= -450){
+        horizontalSize = 0;
+        verticalSize = 0;
+    }else if (verticalSize >= 450 || verticalSize <= -450){
+        verticalSize = 0;
+        horizontalSize = 0;
+    }
 
+
+    console.log(Math.trunc(Math.random() * 450));
 }
 document.body.addEventListener("keydown", test);
