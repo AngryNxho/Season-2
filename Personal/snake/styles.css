@@ -9,6 +9,7 @@
 .container{
     display: grid;
     justify-content: center;
+    text-align: center;
 }
 
 
@@ -38,3 +39,24 @@
 
 }
 
+.btns{
+    padding: 10px;
+}
+
+.btns button{
+    background: red;
+    padding: 15px;
+    border-radius:10px;
+    border: none;
+    color: white;
+
+}
+
+button:hover{
+    background: rgba(0,0,0,.5);
+    cursor:pointer;
+}
+
+.hidden{
+    display: none;
+}
