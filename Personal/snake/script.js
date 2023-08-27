@@ -5,27 +5,38 @@ let extra = document.querySelector(".extraW");
 let horizontalSize = 0;
 let verticalSize = 0;
 
-function marginXY(){
-    counter = Math.trunc(Math.random() * 2) + 1;
-    console.log(counter);
+function randomXY(){
+    let random = Math.trunc(Math.random() * 2) + 1;
+    
+    if (random === 1){
+        random = -450;
+    }else{
+        random = 450
+    }
+    
+    return random;
 }
 
+
 function movement(e){
-    extra.style.marginLeft= Math.trunc(Math.random() * 450);
     if (e.key === "ArrowRight"){
         horizontalSize += 25;
-        // console.log(horizontalSize)
+        console.log(horizontalSize)
     }
     else if (e.key === "ArrowLeft"){
         horizontalSize -= 25;
-        // console.log(horizontalSize)
+        console.log(horizontalSize)
     }else if (e.key ==="ArrowUp"){
         verticalSize += 25;
-        // console.log(verticalSize);
-    }else if (e.key === "ArrowDown"){
+        console.log(verticalSize);
+    }else{
         verticalSize -= 25;
-        // console.log(verticalSize);
+        console.log(verticalSize);
     }
+    
+    let horizontalDir = (Math.trunc(Math.random() * randomXY()) + 1);
+        snake.style.width = 25;
+    console.log();(extra.style.marginLeft == horizontalSize + "px")
     snake.style.marginLeft = horizontalSize;
     snake.style.marginBottom = verticalSize;
     if (horizontalSize >= 450 || horizontalSize <= -450){
@@ -35,10 +46,13 @@ function movement(e){
         verticalSize = 0;
         horizontalSize = 0;
     }
-    console.log(Math.trunc(Math.random() * 450));
+    // console.log(Math.trunc(Math.random() * 450));
+    
+    return horizontalDir;
 }
 snake.classList.add("hidden");
 extra.classList.add("hidden");
+
 document.addEventListener("keydown", movement);
 
 start.addEventListener("click", function(){
@@ -47,4 +61,9 @@ start.addEventListener("click", function(){
 
 });
 
-document.addEventListener("click", marginXY);
+
+document.addEventListener("click", function(){
+    extra.style.marginLeft = 150;
+    console.log(extra.style.marginLeft);
+
+})

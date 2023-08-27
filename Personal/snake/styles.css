@@ -32,11 +32,11 @@
 }
 
 .extraW{
-    position: relative;
+    position: absolute;
     height: 25px;
     width: 25px;
     background: black;
-
+    border: solid 1px black;
 }
 
 .btns{
