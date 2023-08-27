@@ -1,10 +1,11 @@
 const snake = document.getElementById("snake");
 const box = document.querySelector(".box");
+let extra = document.querySelector(".extraW");
 let horizontalSize = 0;
 let verticalSize = 0;
 function test(e){
     console.log(e.key);
-    
+    extra.style.marginLeft= Math.trunc(Math.random() * 450);
     if (e.key === "ArrowRight"){
         horizontalSize += 25;
         console.log(horizontalSize)
@@ -28,8 +29,6 @@ function test(e){
         verticalSize = 0;
         horizontalSize = 0;
     }
-
-
     console.log(Math.trunc(Math.random() * 450));
 }
-document.body.addEventListener("keydown", test);
+document.addEventListener("keydown", test);
