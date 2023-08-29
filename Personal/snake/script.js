@@ -36,7 +36,6 @@ function movement(e){
     
     let horizontalDir = (Math.trunc(Math.random() * randomXY()) + 1);
         snake.style.width = 25;
-    console.log();(extra.style.marginLeft == horizontalSize + "px")
     snake.style.marginLeft = horizontalSize;
     snake.style.marginBottom = verticalSize;
     if (horizontalSize >= 450 || horizontalSize <= -450){
