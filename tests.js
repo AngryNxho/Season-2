@@ -1,6 +1,3 @@
-function hola(s){
-    s = 150
-    return s;
+function bisiesto(anho, muerte){
+    for 
 }
-
-console.log(hola());
