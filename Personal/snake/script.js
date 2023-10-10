@@ -3,7 +3,6 @@ const background = document.querySelector(".content");
 let topPosition = 0; // initialize top position
 let sidePosition = 0;
 let snakeID;
-
 // Myself and some chatgpt
 function movement(e) {
     clearInterval(snakeID);
@@ -20,19 +19,32 @@ function movement(e) {
 
     snakeID = setInterval(() => {
         movement(e)
-    }, 150);
+    }, 100);
     
     
     snake.style.marginTop = topPosition + "px";
     snake.style.marginRight = sidePosition + "px";
 
-    return null;
+    console.log(snake.style.marginTop, snake.style.marginRight);
+    if ((snake.style.marginTop == 500 + "px") || 
+    (snake.style.marginTop == -500 + "px") ||
+    (snake.style.marginRight == 500 + "px")|| 
+    (snake.style.marginRight == -500 + "px")) {
+        checkCollision();
+    }
+
+    return null ;
 } 
 
-function checkCollision () {
-    console.log(snake.style.marginTop);
- }
+function checkCollision() {
+    snake.style.marginTop = 0 + "px"
+    snake.style.marginRight = 0 + "px"
+    
+    topPosition = 0
+    sidePosition = 0;
+}
 
 document.addEventListener("keydown", movement);
+
 
 console.log(checkCollision());
