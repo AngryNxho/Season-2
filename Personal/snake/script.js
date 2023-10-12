@@ -25,7 +25,6 @@ function movement(e) {
     snake.style.marginTop = topPosition + "px";
     snake.style.marginRight = sidePosition + "px";
 
-    console.log(snake.style.marginTop, snake.style.marginRight);
     if ((snake.style.marginTop == 500 + "px") || 
     (snake.style.marginTop == -500 + "px") ||
     (snake.style.marginRight == 500 + "px")|| 

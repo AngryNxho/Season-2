@@ -1,5 +1,16 @@
-let hola = ["chao", "hello", "a", "hello", "a", "hello", "a"];
+function Empleado(legajo, nombre, apellido, fecha, cargo){
+    this.legajo = legajo;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.fecha = fecha;
+    this.cargo = cargo;
 
-hola.forEach(e => {
-    console.log(e);
-})
+}
+
+
+let newEmployee = new Empleado("CARGO", "nacho", "manriquez", "28-08-2001", "informatica")
+
+
+for (let x in newEmployee) {
+    console.log(x);
+}
