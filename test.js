@@ -12,5 +12,5 @@ let newEmployee = new Empleado("CARGO", "nacho", "manriquez", "28-08-2001", "inf
 
 
 for (let x in newEmployee) {
-    console.log(x);
+    console.log(x, newEmployee[x]);
 }

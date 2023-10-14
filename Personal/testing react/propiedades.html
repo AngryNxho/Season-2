@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React</title>
+    <!-- Your custom script here -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+     <script type="text/babel">
+        function Bienvenido({nombre}) {
+            return <h1>Hola {nombre}</h1>
+        }
+        function Login({nombre}) {
+            return (
+                <form action="/action.php" method="POST">
+                    <label for="name">Nombre:</label>
+                    <input id="name" name="name" value={nombre} />
+                    <br />
+                    <label>
+                        Email
+                        <input name="email" type="email" required placeholder="miemail@ejemplo.com" />
+                    </label>
+                    <br />
+                    <button>Iniciar Sesión</button>
+                </form>
+            );
+        }
+
+        
+        function App() {
+           const nombre = "Pedro"
+        return (
+            <div>
+                <Bienvenido nombre={nombre}/>
+                <Login nombre ={nombre}/>
+            </div>
+        )
+       }
+
+        ReactDOM.render(<App/> , document.getElementById("root"));
+
+
+     </script>
+</body>
+</html>
