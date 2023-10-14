@@ -16,16 +16,15 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      class Bienvenido extends React.Component {
-        render() {
-          return <h1>Bienvenido {this.props.nombre}</h1>;
+     
+       function Series(props) {
+         
+         return <ul>{props.lista.map(serie => <li key={serie}>{serie}</li> )}</ul>
         }
-      }
+        const lista = ["Silicon Valley", "Mr Robot", "Black Mirror"]
+        
+      ReactDOM.render(<Series lista = {lista}/>, document.getElementById("root"));
 
-      ReactDOM.render(
-        <Bienvenido nombre="Charly" />,
-        document.getElementById("root")
-      );
     </script>
   </body>
 </html>

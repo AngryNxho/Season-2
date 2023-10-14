@@ -16,16 +16,24 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      class Bienvenido extends React.Component {
-        render() {
-          return <h1>Bienvenido {this.props.nombre}</h1>;
-        }
-      }
+      //Eventos con funcion
+      //function Alertador(props) {
+      //  const alerta = (e) => console.log("Alerta", e)
+      //    return <button onClick={alerta}>Click</button>
+      //}
 
-      ReactDOM.render(
-        <Bienvenido nombre="Charly" />,
-        document.getElementById("root")
-      );
+
+      //Eventos con clases
+      //class Alertador extends React.Component {
+      //  alerta = (e) => console.log("Alerta", e)
+      //
+      //  render() {
+      //      return <button onClick={this.alerta}>Click</button>
+      //  }
+      //} 
+
+      ReactDOM.render(<Alertador />, document.getElementById("root"));
+
     </script>
   </body>
 </html>
