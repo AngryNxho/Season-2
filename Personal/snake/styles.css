@@ -31,8 +31,19 @@ html {
 }
 
 .snake {
-    position: relative;
     height: 25px;
     width: 25px;
     background: black;
 }   
+
+.apple { 
+    height: 25px;
+    position: absolute;
+    width: 25px;
+    background: white;
+    margin: 3px;
+}
+
+.hidden {
+    display: none;
+}

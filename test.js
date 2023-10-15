@@ -1,16 +1,54 @@
-function Empleado(legajo, nombre, apellido, fecha, cargo){
-    this.legajo = legajo;
-    this.nombre = nombre;
-    this.apellido = apellido;
-    this.fecha = fecha;
-    this.cargo = cargo;
+const selectElement = document.querySelector(".opcion");
+let button = document.querySelector("#buscar");
+var tipo;
+const pelicula = 'peliculas';
+const serie = 'series';
 
+
+selectElement.addEventListener("change", cambiar)
+ 
+function cambiar(event) {
+    if(event.target.value == pelicula) {
+        tipo = 'peliculas'
+    }else{
+        if(event.target.value == serie) {
+            tipo = 'series'
+        }
+    }
+    return tipo;
 }
 
 
-let newEmployee = new Empleado("CARGO", "nacho", "manriquez", "28-08-2001", "informatica")
 
 
-for (let x in newEmployee) {
-    console.log(x, newEmployee[x]);
+
+button.addEventListener('click', busqueda)
+
+
+function busqueda(){
+
+    fetch('peliculas.json')
+    .then(res => res.json())
+    .then((data) => {
+
+        const lista = document.getElementById('lista');
+
+
+        data.data.forEach(pelicula => {
+
+            const elementLi = document.createElement('li');
+            elementLi.textContent = pelicula.nombre;
+
+            lista.appendChild(elementLi);
+
+            console.log(pelicula.nombre);
+
+        });
+
+
+    })
+
+
+
+
 }
