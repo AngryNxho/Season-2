@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>React</title>
+    <!-- Your custom script here -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      class Reloj extends React.Component {
+
+        constructor(props) {
+          super(props);
+          this.state = {fecha: new Date().toLocaleTimeString() };
+        }
+
+
+        componentDidMount() {
+          this.timerId = setInterval(
+            () => this.tick(),
+            1000
+          )
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.timerId);
+        }
+        
+        tick() {
+          this.setState(() => ({ fecha: new Date().toLocaleTimeString() }))
+        }
+
+
+        render() {
+          return (
+            <div>
+              <h1>Que hora es?</h1>
+              <h2>Son las {this.state.fecha}</h2>
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <Reloj />,
+         document.getElementById("root"));
+
+    </script>
+  </body>
+</html>
