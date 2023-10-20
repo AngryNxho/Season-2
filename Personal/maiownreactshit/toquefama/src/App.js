@@ -1,17 +1,21 @@
-import { useState } from "react"
+import "./App.css";
+import { useState } from "react";
+import DisplayNumber from "./DisplayNumber";
 
-export default function App() {
-
+function App() {
     const [number, setNumber] = useState(0);
 
     const handleClick = () => {
-        setNumber(number + 1);
+        setNumber(Math.floor(Math.random() * 9) + 1);
     }
-
-    return (
-        <div>
-            <h1>Number: {number}</h1>
-            <button onClick = {handleClick}>Click</button>
+    
+  return (
+    <div className="container">
+        <div className="content">
+          <DisplayNumber number={number} onClick={handleClick}/>
         </div>
-    )
+    </div>
+  );
 }
+
+export default App;
