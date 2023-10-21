@@ -1,6 +1,5 @@
 const snake = document.querySelector(".snake");
 const background = document.querySelector(".content");
-let apple = document.querySelector(".apple");
 let topPosition = 0; // initialize top position
 let sidePosition = 0;
 let snakeID;
@@ -33,9 +32,6 @@ function movement(e) {
         checkCollision();
     }
 
-    console.log(snake.style.marginTop == apple.style.marginTop);
-
-
     return null ;
 } 
 
@@ -47,11 +43,4 @@ function checkCollision() {
     sidePosition = 0;
 }
 
-
-
 document.addEventListener("keydown", movement);
-document.addEventListener("click", () => {
-    console.log(123);
-    apple.style.marginTop = "400px"
-    apple.classList.remove("hidden");
-});

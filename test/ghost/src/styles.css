@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    background: red;
+    max-width: 370px;
+}
+
+.info {
+    position: relative;
+    right: 0px;
+    height: 80px;
+    width: 360px;
+    background-color: red;
+    bottom: 10px;
+    text-align: center;
+    font-size: 70px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+
+.grid button{
+    margin: 10px;
+    padding: 30px;
+    background: black;
+    font-size: 40px;
+}
+
+button:hover{
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
