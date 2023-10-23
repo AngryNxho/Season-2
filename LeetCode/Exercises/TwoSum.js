@@ -18,4 +18,4 @@ function twoSum(nums, target) {
 // console.log(twoSum([-1, -2, -3, -4, -5], -8)); //2, 4 \\ 6
 console.log(twoSum([1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], 11)); //5, 11
 // console.log(twoSum([6, 5, 7, 8, 9, 3], 10)); // 2, 5 \\ 10
-// console.log(twoSum([2, 5, 5, 11], 10)); //1, 2w
+// console.log(twoSum([2, 5, 5, 11], 10)); //1, 2
