@@ -2,6 +2,12 @@ const romanToInt = function(s) {
 
     //Written from left to right
 
+  
+// I puede colocarse antes de V (5) y X (10) para hacer 4 y 9.
+// X puede colocarse antes de L (50) y C (100) para hacer 40 y 90.
+// C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
+// Dado un número romano, conviértelo a un número entero.
+
     const romans = {
         "I":1,
         "V":5,
@@ -12,13 +18,14 @@ const romanToInt = function(s) {
         "M":1000
     }
 
-    let result = "";
-
+    let result = 0;
 
     for (z in s) {
-        console.log(123);
         for (let x = 0; x < Object.values(romans).length; x++){
-            console.log(s[x]);
+            if (s[x] == Object.keys(romans)[z]){
+                console.log(s[x], Object.keys(romans)[z]);
+                result += Object.values(romans)[z]
+            }
             // result += Object.values(romans)[x]
 
         }
@@ -27,4 +34,4 @@ const romanToInt = function(s) {
 };
 
 
-console.log(romanToInt("III"))
+console.log(romanToInt("MCMXCIV"))
