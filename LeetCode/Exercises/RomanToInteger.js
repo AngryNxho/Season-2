@@ -13,31 +13,19 @@ const romanToInt = function(s) {
     }
 
     let result = 0;
-
-    let i = 0
-    let c = 0
+    let i;
     for (let z in s) {
-        for (const [key, value] of Object.entries(romans)) {
-            if ((key == s[z]) && (s[z] == "V" )|| (s[z] == "X" ) && (s[i] == "I")){
-                c++;
-                result = (value - 1) * c;
-            }
-            // else if ((key == s[z]) && (s[z] == "L" || s[z] == "C" ) && (s[i] == "X")){
-                // result = value - 10;
-            // }else if ((key == s[z]) && (s[z] == "D" || s[z] == "M" ) && (s[i] == "C")){
-                // result = value - 100;
-            // }
-            // else if ((key == s[z])) {
-                // result += value;
-            // }
-            
-            // console.log(s[ i]);
-            i++;
-            if (i >= s.length){
-                i = 0;
+        for (let [key, value] of Object.entries(romans)) {
+            if (key == s[z]){
+
+                if ((key == s[z]) && (s[z] == "V" ) && (s[i] == "I")){
+                    i ++;
+                }
+                result += value;
             }
         }
-     }
+        
+    }
     return result;
 };
 
@@ -46,4 +34,17 @@ const romanToInt = function(s) {
 // X puede colocarse antes de L (50) y C (100) para hacer 40 y 90.
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
-console.log(romanToInt("IVIVIVIV")) // 1000, 900, 90, 4
+console.log(romanToInt("IV")) // 1000, 900, 90, 4
+console.log(romanToInt("IXIX")) // 1000, 900, 90, 4
+
+
+// if ((key == s[z]) && (s[z] == "V" )|| (s[z] == "X" ) && (s[i] == "I")){
+    // c++;
+    // console.log(value);
+    // result = value;
+// }
+
+// i++;
+// if (i >= s.length){
+    // i = 0;
+// }
