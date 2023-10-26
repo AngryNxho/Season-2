@@ -19,3 +19,27 @@ const romanToInt = function (s) {
     XC: 90,
     CD: 400,
     CM: 900,
+  };
+
+  let result = 0;
+  let counter;
+  for (let loop in s) {
+    for (let [key, value] of Object.entries(romans)) {
+      if (s[loop] ==  key) { 
+        result += value;
+      }
+    }
+  
+  }
+
+  
+  return result;
+};
+
+// I puede colocarse antes de V (5) y X (10) para hacer 4 y 9.
+// X puede colocarse antes de L (50) y C (100) para hacer 40 y 90.
+// C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
+// console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
+// console.log(romanToInt("MCMXCIV")); // 1000, 900, 90, 4
+console.log(romanToInt("IX")); // 1000, 900, 90, 4 IV VX
+// 1000, 100, 1000, 10, 100, 1 , v
