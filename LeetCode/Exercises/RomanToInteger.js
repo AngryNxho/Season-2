@@ -4,10 +4,6 @@ const romanToInt = function(s) {
 
     const romans = {
         "I":1,
-        "IV":4,
-        "IX":9,
-        "XL":40,
-        "XC":90,
         "V":5,
         "X":10,
         "L":50,
@@ -16,11 +12,14 @@ const romanToInt = function(s) {
         "M":1000
     }
 
-
     let result = 0;
-    for (let z in s) {
-        for (let [key, value] of Object.entries(romans)) {
-        }
+    let first; 
+        for (let romansLoop in romans) {
+                first = 0;
+                for (let [key, value] of Object.entries(romans)) {
+                    first++;
+                        
+            }
         
     }
     return result;
@@ -32,15 +31,4 @@ const romanToInt = function(s) {
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
 console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
-
-
-// if ((key == s[z]) && (s[z] == "V" )|| (s[z] == "X" ) && (s[i] == "I")){
-    // c++;
-    // console.log(value);
-    // result = value;
-// }
-
-// i++;
-// if (i >= s.length){
-    // i = 0;
-// }
+// 900, 90, 4
