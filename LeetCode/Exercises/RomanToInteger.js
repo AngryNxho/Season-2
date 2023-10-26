@@ -11,9 +11,20 @@ const romanToInt = function (s) {
     M: 1000,
   };
 
+  const romansConstraints = {
+    I: 5,
+    IV: 4,
+    IX: 9,
+    XL: 40,
+    XC: 90,
+    CD: 400,
+    CM: 900,
+  };
+
   let result = 0;
-  let minus = -1;
+  let counter;
   for (let loop in s) {
+<<<<<<< HEAD
       let first = 0;
       for (let [key, value] of Object.entries(romans)) {
         if (s[loop] == key) {
@@ -23,8 +34,17 @@ const romanToInt = function (s) {
 
             }
         }
+=======
+    for (let [key, value] of Object.entries(romans)) {
+      if (s[loop] ==  key) { 
+        result += value;
+      }
+>>>>>>> e51816af (f)
     }
-}
+  
+  }
+
+  
   return result;
 };
 
@@ -32,6 +52,7 @@ const romanToInt = function (s) {
 // X puede colocarse antes de L (50) y C (100) para hacer 40 y 90.
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
+<<<<<<< HEAD
 console.log(romanToInt("IV")); // 1000, 900, 90, 4
 console.log(romanToInt("IVV")); // 1000, 900, 90, 4
 console.log(romanToInt("IVIVIV")); // 1000, 900, 90, 4
@@ -46,3 +67,8 @@ console.log(romanToInt("IVIVIV")); // 1000, 900, 90, 4
                 // result += (value - 100);
                 // first++
             // }
+=======
+// console.log(romanToInt("MCMXCIV")); // 1000, 900, 90, 4
+console.log(romanToInt("IX")); // 1000, 900, 90, 4 IV VX
+// 1000, 100, 1000, 10, 100, 1 , v
+>>>>>>> e51816af (f)
