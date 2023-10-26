@@ -17,18 +17,10 @@ const romanToInt = function (s) {
       let first = 0;
       for (let [key, value] of Object.entries(romans)) {
         if (s[loop] == key) {
-            console.log(s[loop], s[first]);
             if ((s[loop] == "X" || s[loop] == "V") && s[first] == "I") {
                 result += (value - 1);
                 first++
 
-            }else if ((s[loop] == "L" || s[loop] == "C") && s[first] == "X") {
-                result += (value - 10);
-                first++
-
-            } else if ((s[loop] == "D" || s[loop] == "M") && s[first] == "C") {
-                result += (value - 100);
-                first++
             }
         }
     }
@@ -40,5 +32,17 @@ const romanToInt = function (s) {
 // X puede colocarse antes de L (50) y C (100) para hacer 40 y 90.
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
-console.log(romanToInt("MCMXCIV")); // 1000, 900, 90, 4
+console.log(romanToInt("IV")); // 1000, 900, 90, 4
+console.log(romanToInt("IVV")); // 1000, 900, 90, 4
+console.log(romanToInt("IVIVIV")); // 1000, 900, 90, 4
 // CM 90 IV 40
+
+
+            // else if ((s[loop] == "L" || s[loop] == "C") && s[first] == "X") {
+                // result += (value - 10);
+                // first++
+// 
+            // } else if ((s[loop] == "D" || s[loop] == "M") && s[first] == "C") {
+                // result += (value - 100);
+                // first++
+            // }
