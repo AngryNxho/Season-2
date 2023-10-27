@@ -21,19 +21,38 @@ const romanToInt = function (s) {
   };
 
   let result = 0;
-  let counter;
-  let counter2;
-  for (let x = 0; x < s.length; x++) {
-      counter = 0;
-      counter2 = 1
-      for (let [key2, value2] of Object.entries(romansConstraints)) {
-        
-        // "MCMX  CIV"; /IX XV VI
-          console.log(s[counter] + s[counter2], key2);
-          counter++;
-          counter2++;
+  let c = 0;
+  let c2;
+  let c3;
+  let c4;
+  //Check normal numbers
+  for (let x in s) {
+      c = 0;
+      c2 = 1;
+      c3 = 1;
+      c4 = 2;
+      for (let [key2nd, value2nd] of Object.entries(romansConstraints)) {
+        console.log(Object.keys(romansConstraints)[c] == s[x] + s[c2], value2nd);
+        if (Object.keys(romansConstraints)[c] == s[x] + s[c2]) {
+          c3++;
+          console.log(s[c3], s[c4]);
+        }
+        if (s[c2] == undefined) {
+          c2 = 1
+        }
+        c++
+
+      }
+      for (let [key, value] of Object.entries(romans)) {
+        if (s[x] == key) {
+          result+= value;
+        }
+      }
+     
     }
-  }
+
+
+  
 
   return result;
 };
@@ -43,6 +62,6 @@ const romanToInt = function (s) {
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
 // console.log(romanToInt("MCMXCIV")); // 1000, 900, 90, 4
-console.log(romanToInt("IXVI")); // 1000, 900, 90, 4 IV VX
+console.log(romanToInt("IXIV")); // 1000, 900, 90, 4 IV VX
 // 1000, 100, 1000, 10, 100, 1 , v
 // "MCMXCIV"; /IX XV VI
