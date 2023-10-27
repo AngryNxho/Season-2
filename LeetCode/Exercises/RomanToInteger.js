@@ -23,16 +23,15 @@ const romanToInt = function (s) {
   let result = 0;
   let counter;
   let counter2;
-  counter = 0;
-  counter2 = 1;
   for (let x = 0; x < s.length; x++) {
-
+      counter = 0;
+      counter2 = 1
       for (let [key2, value2] of Object.entries(romansConstraints)) {
         
         // "MCMX  CIV"; /IX XV VI
-        if (s[counter] + s[counter2] == key2) {
-            console.log(s[counter] + s[counter2], key2);
-        }
+          console.log(s[counter] + s[counter2], key2);
+          counter++;
+          counter2++;
     }
   }
 
