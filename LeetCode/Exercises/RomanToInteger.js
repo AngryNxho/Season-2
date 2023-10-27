@@ -33,10 +33,6 @@ const romanToInt = function (s) {
       c4 = 2;
       for (let [key2nd, value2nd] of Object.entries(romansConstraints)) {
         console.log(Object.keys(romansConstraints)[c] == s[x] + s[c2], value2nd);
-        if (Object.keys(romansConstraints)[c] == s[x] + s[c2]) {
-          c3++;
-          console.log(s[c3], s[c4]);
-        }
         if (s[c2] == undefined) {
           c2 = 1
         }
