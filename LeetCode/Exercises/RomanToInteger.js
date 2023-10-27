@@ -12,7 +12,6 @@ const romanToInt = function (s) {
   };
 
   const romansConstraints = {
-    I: 5,
     IV: 4,
     IX: 9,
     XL: 40,
@@ -23,16 +22,20 @@ const romanToInt = function (s) {
 
   let result = 0;
   let counter;
-  for (let loop in s) {
-    for (let [key, value] of Object.entries(romans)) {
-      if (s[loop] ==  key) { 
-        result += value;
-      }
+  let counter2;
+  counter = 0;
+  counter2 = 1;
+  for (let x = 0; x < s.length; x++) {
+
+      for (let [key2, value2] of Object.entries(romansConstraints)) {
+        
+        // "MCMX  CIV"; /IX XV VI
+        if (s[counter] + s[counter2] == key2) {
+            console.log(s[counter] + s[counter2], key2);
+        }
     }
-  
   }
 
-  
   return result;
 };
 
@@ -41,5 +44,6 @@ const romanToInt = function (s) {
 // C puede colocarse antes de D (500) y M (1000) para hacer 400 y 900.
 // console.log(romanToInt("MCMXCIV")) // 1000, 900, 90, 4
 // console.log(romanToInt("MCMXCIV")); // 1000, 900, 90, 4
-console.log(romanToInt("IX")); // 1000, 900, 90, 4 IV VX
+console.log(romanToInt("IXVI")); // 1000, 900, 90, 4 IV VX
 // 1000, 100, 1000, 10, 100, 1 , v
+// "MCMXCIV"; /IX XV VI
