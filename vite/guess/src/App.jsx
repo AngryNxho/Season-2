@@ -1,3 +1,7 @@
+import DisplayInfo from "./DisplayInfo";
+import "./styles.css"
 export default function App() {
-    return <h1>hola</h1>
+    return (
+        <DisplayInfo/>
+    )
 }
