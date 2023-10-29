@@ -28,17 +28,19 @@ export default function DisplayInfo() {
     const handleChange = (event) => {
         let secretCode = getRandomNumbers(event.target.value) ;
 
-        console.log(secretCode)
+        console.log(secretCode, event.target.value)
         setLength(event.target.value);
         
       };
+
+   
 
     return (
         <div className="background">
             <div className = "container">
                 <div className="content">
                     <label>Number Length</label>
-                    <input type="number" className="length" value = {length} onChange={handleChange}/>
+                    <input type="number" className="length" min = {1} max={9} onChange={handleChange}/>
                     <label>Guess the Number</label>
                     <input type="number" className="numbers"/> 
                     <div className="centerDiv">
@@ -49,7 +51,7 @@ export default function DisplayInfo() {
                         <button className="check">check</button>
                     </div>
                     <div className="stats">
-                        <h1>Toques: {length}</h1>
+                        <h1>Toques: {toque}</h1>
                         <h1>Famas: {fama}</h1>
                     </div>
                 </div>
