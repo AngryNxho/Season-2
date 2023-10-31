@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Hooks Explainer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        const { useState, useEffect, createContext, useContext } = React;
+
+        function UseStateExample() {
+            const [count, setCount] = useState(0);
+
+            return (
+                <div>
+                    <h2>useState Example</h2>
+                    <p>
+                        useState allows you to add state to functional components.
+                    </p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                    <p>You clicked {count} times</p>
+                </div>
+            );
+        }
+
+        function UseEffectExample() {
+            const [count, setCount] = useState(0);
+
+            useEffect(() => {
+                document.title = `You clicked ${count} times`;
+            });
+
+            return (
+                <div>
+                    <h2>useEffect Example</h2>
+                    <p>
+                        useEffect lets you perform side effects in functional components.
+                    </p>
+                    <button onClick={() => setCount(count + 1)}>
+                        Click me
+                    </button>
+                </div>
+            );
+        }
+
+        const ThemeContext = createContext();
+
+        function ThemeProvider({ children }) {
+            const [theme, setTheme] = useState('light');
+            return (
+                <ThemeContext.Provider value={{ theme, setTheme }}>
+                    {children}
+                </ThemeContext.Provider>
+            );
+        }
+
+        function ThemeToggle() {
+            const { theme, setTheme } = useContext(ThemeContext);
+            return (
+                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                    Toggle Theme
+                </button>
+            );
+        }
+
+        function UseContextExample() {
+            return (
+                <div>
+                    <h2>useContext Example</h2>
+                    <p>
+                        useContext lets you access the context for a component tree without having to prop drill.
+                    </p>
+                    <ThemeProvider>
+                        <ThemeToggle />
+                    </ThemeProvider>
+                </div>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>React Hooks Explainer</h1>
+                    <UseStateExample />
+                    <UseEffectExample />
+                    <UseContextExample />
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
