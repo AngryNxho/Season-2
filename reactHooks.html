@@ -32,7 +32,7 @@
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-        const { useState, useEffect, createContext, useContext } = React;
+        const { useState, useEffect } = React;
 
         function UseStateExample() {
             const [count, setCount] = useState(0);
@@ -71,47 +71,12 @@
             );
         }
 
-        const ThemeContext = createContext();
-
-        function ThemeProvider({ children }) {
-            const [theme, setTheme] = useState('light');
-            return (
-                <ThemeContext.Provider value={{ theme, setTheme }}>
-                    {children}
-                </ThemeContext.Provider>
-            );
-        }
-
-        function ThemeToggle() {
-            const { theme, setTheme } = useContext(ThemeContext);
-            return (
-                <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                    Toggle Theme
-                </button>
-            );
-        }
-
-        function UseContextExample() {
-            return (
-                <div>
-                    <h2>useContext Example</h2>
-                    <p>
-                        useContext lets you access the context for a component tree without having to prop drill.
-                    </p>
-                    <ThemeProvider>
-                        <ThemeToggle />
-                    </ThemeProvider>
-                </div>
-            );
-        }
-
         function App() {
             return (
                 <div>
                     <h1>React Hooks Explainer</h1>
                     <UseStateExample />
                     <UseEffectExample />
-                    <UseContextExample />
                 </div>
             );
         }
