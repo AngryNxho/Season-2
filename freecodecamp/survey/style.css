@@ -2,20 +2,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: red;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
 }
 
 
+header {
+    position: relative;
+    place-items: center;
+    width: 100%;
+}
+
+
+
+.background {
+    position: absolute;
+    height: 100vh;
+    width: 1920px;
+
+    background: url(https://i.pinimg.com/originals/5e/26/e9/5e26e9ea8178976156c1080219b99a26.png) center/cover;
+}
 .container {
+    position: relative;
     display: grid;
     text-align: center;
-    height: 100vh;
-}
-
-.container .content {
-    justify-self: center;
-    align-self: center;
-    height: 800px;
-    width: 800px;
-    background: black;
 }
