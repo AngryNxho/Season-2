@@ -1,0 +1,44 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    height: 100vh;
+    min-width: 100%;
+    background: #edede9;
+    display: grid;
+}
+
+
+.side {
+    background: url(https://i.pinimg.com/originals/85/69/86/8569864a68e580fa66912f9caba9c4e2.jpg) center/cover;
+    height: 100vh;
+    width: 600px;
+    place-self: left;
+
+}
+
+.center {
+    position: absolute;
+    place-self: center;
+    left: 600px;
+    height: 300px;
+    width: 1316px;
+    background-color: #b5179e;
+}
+
+
+.textContainer {
+    display:grid;
+    position: absolute;
+    left: 630px;
+    top: 80px;
+
+}
+
+.centerText {
+    text-align: left;
+    font-size: 30px;
+    font-weight: bold;
+}
