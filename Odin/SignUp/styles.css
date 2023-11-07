@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&family=Montserrat&display=swap');
 
 * {
     padding: 0;
     margin: 0;
 }
+
+html {
+    font-family: Montserrat;
+}
+
 .container {
     height: 100vh;
     min-width: 100%;
-    background: #edede9;
+    background: black;
     display: grid;
 }
 
@@ -14,31 +20,44 @@
 .side {
     background: url(https://i.pinimg.com/originals/85/69/86/8569864a68e580fa66912f9caba9c4e2.jpg) center/cover;
     height: 100vh;
-    width: 600px;
+    width: 500px;
     place-self: left;
-
+    
 }
 
 .center {
     position: absolute;
     place-self: center;
-    left: 600px;
-    height: 300px;
+    left: 500px;
+    height: 200px;
     width: 1316px;
-    background-color: #b5179e;
+    background-color: purple;
+    border: solid 13px white;
+    border-style: dashed;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin: 40px;
 }
 
 
 .textContainer {
     display:grid;
     position: absolute;
-    left: 630px;
-    top: 80px;
+    left: 530px;
+    top: 30px;
 
+}
+
+.textContainer p {
+    font-size: 19px;
 }
 
 .centerText {
     text-align: left;
-    font-size: 30px;
     font-weight: bold;
+    padding: 20px;
 }
