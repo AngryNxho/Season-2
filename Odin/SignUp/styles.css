@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     font-family: Montserrat;
+    color: white;
 }
 
 .container {
@@ -11,21 +12,46 @@
     height: 100vh;
 }
 
+
+
 .picture {
+    display: grid;
     position: absolute;
-    background: red;
+    background: url(https://e0.pxfuel.com/wallpapers/688/186/desktop-wallpaper-the-relaxing-time-iphone-relaxing-purple.jpg) center/cover;
     width: 25%;
     height: 100vh;
 }
 
+.logo {
+    height: 130px;
+    background: url(https://i.pinimg.com/originals/bb/3c/be/bb3cbe325fc0808684cb35b2e93d8744.png) center/cover no-repeat;
+    background-size: 110px;
+    position: relative;
+}
+
+.gray {
+    position: absolute;
+    height: 120px;
+    min-width: 100%;
+    background: rgba(0, 0, 0, .5);
+    margin-top: 186px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 5px;
+}   
+
+
+
+body {
+    background: linear-gradient(to top right, #7E3495, #451B43) ;
+}
+
 .right {
     position: absolute;
-    height: 250px;
+    height: 300px;
     width: 75%;
     margin-left: 479px;
-    background: blue;
+    background: rgba(0, 0, 0, .5);
     place-self: center;
-    
 }
 
 
@@ -34,20 +60,68 @@
     font-size: 25px;
     min-width: 1000px;
     margin: 50px;
-    bottom: 245px;
+    bottom: 295px;
     
 }
 
-.card p{
+
+.card h1{
     font-size: 25px;
+    margin-left: 40px;
 }
 
 .cardContent {
+    position: relative;
+    bottom: 30px;
+    margin: 30px;
     display: flex;
     flex-direction: column;
-    margin: 30px;   
+    place-content: left;
+    gap: 15px;
 }
-.cardContent input,
-.cardContent label {
-    ;
 
+
+input {
+    height: 25px;
+    width: 200px;
+    border-radius: 2px;
+    border: solid 2px #7209b7;
+    margin-left: 10px;
+    color: #4361ee;
+    padding: 0 5px;
+}
+
+
+
+.first { 
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.first label p,
+.second label p,
+.third label p{
+    font-size: 12px;
+    margin-bottom: 2px;
+    margin-left: 12px;
+}
+
+.buttons {
+    margin-left: 40px;
+}
+
+.buttons button {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 35px;
+    color: white;
+    background: #7E3495;
+    border-radius: 3px;
+    border: solid 2px white;
+}
+
+a {
+    color: #4cc9f0;
+    text-decoration: none;
+}
