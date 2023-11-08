@@ -3,61 +3,51 @@
 * {
     padding: 0;
     margin: 0;
-}
-
-html {
     font-family: Montserrat;
 }
 
 .container {
-    height: 100vh;
-    min-width: 100%;
-    background: black;
     display: grid;
+    height: 100vh;
 }
 
-
-.side {
-    background: url(https://i.pinimg.com/originals/85/69/86/8569864a68e580fa66912f9caba9c4e2.jpg) center/cover;
+.picture {
+    position: absolute;
+    background: red;
+    width: 25%;
     height: 100vh;
-    width: 500px;
-    place-self: left;
+}
+
+.right {
+    position: absolute;
+    height: 250px;
+    width: 75%;
+    margin-left: 479px;
+    background: blue;
+    place-self: center;
     
 }
 
-.center {
+
+.header {
     position: absolute;
-    place-self: center;
-    left: 500px;
-    height: 200px;
-    width: 1316px;
-    background-color: purple;
-    border: solid 13px white;
-    border-style: dashed;
+    font-size: 25px;
+    min-width: 1000px;
+    margin: 50px;
+    bottom: 245px;
+    
 }
 
-form {
+.card p{
+    font-size: 25px;
+}
+
+.cardContent {
     display: flex;
-    flex-direction: row;
-    gap: 60px;
-    margin: 40px;
+    flex-direction: column;
+    margin: 30px;   
 }
+.cardContent input,
+.cardContent label {
+    ;
 
-
-.textContainer {
-    display:grid;
-    position: absolute;
-    left: 530px;
-    top: 30px;
-
-}
-
-.textContainer p {
-    font-size: 19px;
-}
-
-.centerText {
-    text-align: left;
-    font-weight: bold;
-    padding: 20px;
-}
