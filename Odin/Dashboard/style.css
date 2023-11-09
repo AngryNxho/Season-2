@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+html {
+    min-height: 100%;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 400px 200px;
+    grid-template-rows: 20vh 50vh;
+    gap: 200px;
+}
+
+.box {
+    background: red;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
