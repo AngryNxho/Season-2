@@ -12,8 +12,8 @@ html {
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 40px 200px 200px;
-    grid-template-rows: 200px 200px auto auto;
+    grid-template-columns: 40px 100px 200px;
+    grid-template-rows: 150px 200px auto auto;
 }
 
 aside {
@@ -27,7 +27,7 @@ aside {
 }
 
 h1 {
-    margin: 30px;
+    margin: 15  px;
 }
 
 
@@ -38,12 +38,14 @@ h1 {
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 5;
-    place-items: center;
+    place-items: left;
 }
 nav {
     grid-row-start: 1;
     background: orange;
 }
+
+
 
 .content {
     background: purple;
@@ -54,4 +56,9 @@ nav {
 
 li {
     list-style: none;
+    margin: 15px;
+}
+
+.aside {
+    margin: 15px;
 }
