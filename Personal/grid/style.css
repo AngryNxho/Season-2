@@ -1,24 +1,56 @@
-body {
-     background: #eee;
-}
-
-
-.grid {
+.gridContainer {
     display: grid;
-    /* grid-template-rows: 50px 100px auto; */
-    /* grid-template-rows: minmax(100px, auto); */
-    /* grid-template-columns: 2rem 20% 1fr 2fr; */
-    grid-template-columns: 30px repeat(3, 1fr) 15px;
-    grid-template-rows: repeat(4, 50px);
-    grid-gap: 15px;
-    
+    height: 100%;
+    grid-template-columns: minmax(200px, auto) 700px auto;
+    grid-template-rows: 40px auto 70px; 
 }
 
-.element {
-    background: red;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.header { 
-    grid-column: 1 / 6;
-    grid-row: 1 / 3;
+html,
+body {
+    height: 100%;
+}
+
+aside,
+nav,
+main, 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside {
+    background: url(https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg) center/cover;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+nav {
+    position: relative;
+    grid-column: 2/4;
+    color: white;
+    max-height: 40px; /* Fixed height */
+    overflow: auto; /* Handle overflow */
+}
+
+nav a {
+    margin: 0 100px; /* Adjusted margin */
+}
+
+main {
+    background: orange;
+    grid-column: 2/4;
+    overflow: auto; /* Handle overflow */
+}
+
+footer {
+    background: yellow;
+    grid-column: 2/4;
+    max-height: 70px; /* Fixed height */
+    overflow: auto; /* Handle overflow */
 }
