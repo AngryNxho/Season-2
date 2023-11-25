@@ -1,13 +1,7 @@
-.gridContainer {
-    display: grid;
-    height: 100%;
-    grid-template-columns: minmax(200px, auto) 700px auto;
-    grid-template-rows: 40px auto 70px; 
-}
-
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
@@ -15,42 +9,66 @@ body {
     height: 100%;
 }
 
-aside,
-nav,
-main, 
-footer {
+.container {
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 40px auto 40px;
+    height: 100%;
+}
+
+
+nav {
     display: flex;
+    background: orange;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
+nav ul a{
+    text-decoration: none;
+    margin: 20px;
+}
+
 aside {
-    background: url(https://w.forfun.com/fetch/62/62e3ce60fc426fe6f475764cd99779b9.jpeg) center/cover;
+    background: blue;
     grid-column: 1/2;
     grid-row: 1/4;
 }
 
-nav {
-    position: relative;
-    grid-column: 2/4;
-    color: white;
-    max-height: 40px; /* Fixed height */
-    overflow: auto; /* Handle overflow */
-}
-
-nav a {
-    margin: 0 100px; /* Adjusted margin */
-}
-
 main {
-    background: orange;
-    grid-column: 2/4;
-    overflow: auto; /* Handle overflow */
+    background: lightblue;
+    grid-row: 2/3;
 }
 
 footer {
-    background: yellow;
-    grid-column: 2/4;
-    max-height: 70px; /* Fixed height */
-    overflow: auto; /* Handle overflow */
+    background: red;
+    grid-column: 2/3;
+}
+
+.text {
+    margin: 50px;
+}
+
+aside ul a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.asideContent {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+button {
+    background-color: red;
+}
+
+ul a:hover,
+button:hover {
+    background: rgba(0,0,0,.4);
+    height: 100px;
+    width: 200px;
 }
