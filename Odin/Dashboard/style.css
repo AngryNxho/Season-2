@@ -13,7 +13,7 @@ body {
 .container {
     display: grid;
     grid-template-rows: 40px 500px auto;
-    grid-template-columns: 300px 500px auto;
+    grid-template-columns: 300px 500px 300px auto;
     height: 100%;
 }
 
@@ -68,12 +68,12 @@ input {
 }
 
 .topBar p {
-    margin-left: 200px;
+    margin-left: 115px;
 }
 
 .topBar img {
     position: relative;
-    left: 200px;
+    left: 120px;
 }
 
 .bottomBar {
@@ -103,6 +103,50 @@ h4 {
 
 .bottomFlex h3 {
     margin-left: 10px;
+}
+
+.rowBtns {
+    position: absolute;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    right: 100px;
+}
+
+button {
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    border: none;
+    background: #eee;
+}
+
+main {
+    grid-row: 2/4;
+    grid-column: 2/5;
+    margin-top: 100px;
+    background: #eee;
+}
+
+main p {
+    margin: 20px 0 10px 20px;
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin-left: 20px;
+}
+
+.cardContent {
+    height: 140px;
+    width: 300px;
+    background: white;
 }
 
 
