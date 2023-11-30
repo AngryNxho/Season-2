@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 100px auto;
+    height: 100vh;
+}
+
+
+
+.headerContent {
+    display: flex;
+    flex-direction: row;
+    gap: 1500px;
+    margin: 20px 0 0 50px;
+}
+
+.login {
+    background: orange;
+    min-width: 100px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+main {
+    grid-column: 1/4;
+    grid-row: 2/3;
+    background: #d62828;
+}
+
+header {
+    background-color: black;
+    grid-column: 1/4;
+    border-bottom: 5px solid white;
+    color: #d62828;
+}
+
+.addBtnContainer {
+    height: 50vh;
+    display: grid;
+    place-items: center;
+}
+
+.addBtnContainer button {
+    height: 100px;
+    width: 200px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    border-radius: 15px;
+}
+
+.addBtnContainer button:hover {
+    background: rgba(0,0,0,.2);
+}
