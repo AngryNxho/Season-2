@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.content {
+    height: 600px;
+    width: 400px;
+    background: red;
+    border-radius: 10px;
+}
+
+.gridContainer {
+    display: grid;
+    border: solid 5px black;
+    grid-template-rows: 150px  1fr 1fr 1fr 1fr;
+    height: 100%;
+    place-items: center;
+}
+
+
+.btns {
+    width: 80px;
+    height: 80px;
+    background: blue;
+    text-align: center;
+    font-size: 20px;
+}
