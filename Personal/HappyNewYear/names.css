@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rubik+Doodle+Triangles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Rubik+Doodle+Triangles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Triangles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+body {
+    background: #eaac8b;
+}
+
+
+.grid {
+    display: grid;
+    grid-gap: 100px;
+    place-content: center;
+}
+
+.card {
+    display: flex;
+    height: 200px;
+    width: 450px;
+    background: #e56b6f;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    margin-top: 30px;
+    border-radius: 50px;
+    color: white;
+}
+
+.esteban {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.alejandra {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.francisca {
+    font-family: 'Rubik Doodle Shadow', sans-serif;
+}
+
+.lucas {
+    font-family: 'Rubik Doodle Triangles';
+}
+
+a {
+    color: white;
+}
+
