@@ -1,43 +1,32 @@
 const allBtns = document.querySelectorAll(".btns");
 const input = document.querySelector(".input");
+const sign = document.querySelector(".sign");
 const zero = document.querySelector(".zero");
 const reset = document.querySelector(".del");
-const sum = document.querySelector(".sum");
+const plus = document.querySelector(".plus");
 const dot = document.querySelector(".dot");
-let inputNums = [0];
-let signs = ["+","-","AC","=","/","X"]
-input.textContent = 0;
+const equal = document.querySelector(".equal");
+let saveNumbers = "";
+let saveSign = [];
+let restrictedSigns = ["+","-","AC","=","/","X","%", "+/-"]
 
-
-allBtns.forEach(content => {
-    content.addEventListener("click", () => {
-        if (input.textContent == 0) {
-            input.textContent = "";
+allBtns.forEach(btnNumber => {
+    btnNumber.addEventListener("click", () => {
+        if (!restrictedSigns.includes(btnNumber.textContent)) {
+            input.textContent = ""
+            sign.textContent = "";
+            saveNumbers += btnNumber.textContent;
+            input.textContent = saveNumbers
         }
 
-        function checkSign(arg) {
-            console.log(typeof(Number(input.textContent)));
+        if (restrictedSigns.includes(btnNumber.textContent)) {
+            saveSign.push(btnNumber.textContent);
         }
 
-        checkSign()
-        
-        if (!signs.includes(content.textContent)) {
-            input.textContent += content.textContent;
-        }
+
+        console.log(saveSign);
     })
 
 })
 
 
-
-reset.addEventListener("click", () => {
-    input.textContent = 0;
-})
-
-sum.addEventListener("click", () => {
-    input.textContent += 1;
-})
-
-dot.addEventListener("click", () => {
-
-})
