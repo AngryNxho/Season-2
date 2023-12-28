@@ -44,6 +44,22 @@
         .letter p {
             padding: 20px;
         }
+
+
+        .btnContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btnContainer button {
+            margin-top: 50px;
+            height: 100px;
+            width: 200px;
+            border:  none;
+            border-radius: 20px;
+            font-size: 20px;
+            background: #e56b6f;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +67,10 @@
         <!-- The letter div will now use the .letter styling -->
         <div class="letter">
             <p id="message"></p>
+        </div>
+
+        <div class="btnContainer">
+            <a href="index.html"><button>Volver al Inicio</button></a>
         </div>
     </div>
     <script>
@@ -71,7 +91,7 @@
                 let message;
                 switch (name.toLowerCase()) {
                     case 'esteban':
-                        message = 'Hello Esteban! Here is your personalized message.';
+                        message = 'Hello Esteban! Here is your personalized message. This is an extended message intended to test the styling and layout of the letter section on the webpage. We want to ensure that longer messages are displayed correctly and maintain the aesthetic appeal of the page.';
                         break;
                     case 'alejandra':
                         message = 'Greetings Alejandra! Check out this special note for you.';
