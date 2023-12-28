@@ -1,41 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="letter.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <style>
+        body {
+            background: #eaac8b;
+        }
+        * {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+
+        .gridContainer {
+            display: grid;
+            height: 90vh;
+            place-content: center;
+        }
+
+        div.hidden  {
+            background-color: red;
+            display: none;
+        }
+
+        .letterImage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+        }
+
+        .letter {
+            display: flex;
+            align-items: center;
+            height: 550px;
+            width: 500px;
+            border-radius: 20px;
+            background-color: #e56b6f;
+            border: 10px dashed black;
+        }
+
+        .letter p {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
     <div class="gridContainer">
-      <div class="content">
-        <a class="closed">
-          <img src="./closedLetter.png" class="letterImage"/>
-        </a>
-        <div class="letter hidden">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-            quaerat ab consectetur suscipit voluptates! Eligendi neque, eum
-            nostrum explicabo excepturi ipsa minima, odio earum officiis,
-            tempore illo iusto placeat non! Ad reprehenderit temporibus
-            perferendis, tempore quae, dolores cumque id labore suscipit ex
-            numquam est illo velit eos totam. Magnam in temporibus ducimus error
-            necessitatibus. Aliquid perspiciatis quae voluptatibus est
-            excepturi! Et rerum, nulla ab autem accusantium magni dolor
-            dignissimos, ullam quae hic sunt laudantium maxime eveniet? Earum
-            quam neque maxime natus, officiis, dolorum sunt sequi quibusdam
-            blanditiis accusamus illo consequuntur? Nisi deleniti numquam
-            officia ea quidem eos ipsa est excepturi officiis pariatur cum et,
-            maiores tenetur magnam molestiae repellat suscipit, dolores sapiente
-            sunt vel. Voluptates mollitia perferendis magnam nam soluta.
-            Expedita sequi dolor commodi vel. Iure delectus cum perferendis.
-            Atque consequuntur repudiandae dolores veniam neque sapiente
-            delectus sequi possimus quidem natus officiis doloremque officia
-            ducimus voluptas, ipsa fugit velit qui.
-          </p>
+        <!-- The letter div will now use the .letter styling -->
+        <div class="letter">
+            <p id="message"></p>
         </div>
-      </div>
     </div>
-    <script src="letter.js"></script>
-  </body>
+    <script>
+
+
+   
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            const name = getQueryParam('name');
+            const messageElement = document.getElementById('message');
+
+            if (name) {
+                let message;
+                switch (name.toLowerCase()) {
+                    case 'esteban':
+                        message = 'Hello Esteban! Here is your personalized message.';
+                        break;
+                    case 'alejandra':
+                        message = 'Greetings Alejandra! Check out this special note for you.';
+                        break;
+                    case 'francisca':
+                        message = 'Hi Francisca! We have something special for you here.';
+                        break;
+                    case 'lucas':
+                        message = 'Hey Lucas! There is a unique message waiting for you.';
+                        break;
+                    default:
+                        message = 'Welcome! Here is a general message for all visitors.';
+                }
+                messageElement.textContent = message;
+            } else {
+                messageElement.textContent = 'No name was selected.';
+            }
+        });
+
+
+        
+    </script>
+</body>
 </html>
