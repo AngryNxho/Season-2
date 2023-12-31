@@ -1,113 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Letter</title>
     <style>
-        body {
-            background: #eaac8b;
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-        }
-        * {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-        }
+      body {
+        background: #eaac8b;
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+      }
+      * {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+      }
 
-        .gridContainer {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-        }
+      .gridContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+      }
 
+      .letter {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 20px;
+        border-radius: 20px;
+        background-color: #e56b6f;
+        border: 10px dashed black;
+        word-wrap: break-word;
+        padding: 20px;
+      }
+
+      /* Responsive design for smaller screens */
+      @media screen and (max-width: 600px) {
         .letter {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            margin: 20px;
-            border-radius: 20px;
-            background-color: #e56b6f;
-            border: 10px dashed black;
-            word-wrap: break-word;
-            padding: 20px;
+          width: 80%;
         }
-        
-        /* Responsive design for smaller screens */
-        @media screen and (max-width: 600px) {
-            .letter {
-                width: 80%;
-            }
-        }
+      }
 
-        .letter p {
-            margin: 0; /* Remove default margin */
-        }
+      .letter p {
+        margin: 0; /* Remove default margin */
+      }
 
-        .btnContainer {
-            display: flex;
-            justify-content: center;
-            width: 100%; /* Ensure full width */
-        }
+      .btnContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Ensure full width */
+      }
 
-        .btnContainer button {
-            margin-top: 20px;
-            height: 50px;
-            width: 200px;
-            border: none;
-            border-radius: 20px;
-            font-size: 20px;
-            background: #e56b6f;
-            cursor: pointer; /* Add a pointer cursor on hover */
-        }
+      .btnContainer button {
+        margin-top: 20px;
+        height: 50px;
+        width: 200px;
+        border: none;
+        border-radius: 20px;
+        font-size: 20px;
+        background: #e56b6f;
+        cursor: pointer; /* Add a pointer cursor on hover */
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="gridContainer">
-        <div class="letter">
-            <p id="message"></p>
-        </div>
+      <div class="letter">
+        <p id="message"></p>
+      </div>
 
-        <div class="btnContainer">
-            <a href="index.html"><button>Volver al Inicio</button></a>
-        </div>
+      <div class="btnContainer">
+        <a href="index.html"><button>Volver al Inicio</button></a>
+      </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
+      document.addEventListener("DOMContentLoaded", function () {
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
 
-            const name = getQueryParam('name');
-            const messageElement = document.getElementById('message');
+        const name = getQueryParam("name");
+        const messageElement = document.getElementById("message");
 
-            if (name) {
-                let message;
-                switch (name.toLowerCase()) {
-                    case 'esteban':
-                        message = "Querido (Papá), mediante esta carta quiero agradecerte por el enorme sacrificio que haces por todos nosotros, por tus ganas de siempre buscar la superación. Me gustaría llegar a convertirme al menos en el 1% del hombre que eres tú. Tenemos mucho tiempo por delante, viejo querido, y espero que nuestro futuro sea toda una experiencia. No todo será perfecto, pero espero que sigamos todos juntos, porque juntos, nadie nos podrá vencer.Te amo mucho y espero poder disfrutar de tu sabiduría por muchos años más.";
-                        break;
-                    case 'alejandra':
-                        message = 'Querida (Mamá), mediante esta carta quiero desearte muchas gracias por todo lo que haces por nosotros, por tu sacrificio, por tu amor y dedicación en cada una de tus acciones. A pesar de que nos ocultes tus emociones, nosotros las percibimos de todas maneras, no siempre te hemos tratado como te lo mereces y estoy seguro de que nunca seremos perfectos, pero lo que sí te puedo asegurar es la lealtad incondicional que un hijo le puede dar a un padre. Te amo mucho y espero poder disfrutar tu compañía por muchos años más.';
-                        break; 
-                    case 'francisca':
-                        message = 'Querida (Hermana), mediante esta carta quiero felicitarte por tu resiliencia, por tu amistad y por ser un ejemplo a seguir. Sé que llegarás muy lejos en esta vida y que, no importa cuán alta sea la montaña, tú la escalarás. Me gustaría compartir esta hermandad y amistad contigo por muchos años más. Al igual que con Luquitas, me consta que llegarás muy lejos y brillarás más que cualquier estrella en el cielo. Para alcanzar el éxito solo debes cuidar un poco más tu yo interno, porque aparte de eso, si sigues así, te esperará un futuro prometedor.';
-                        break;
-                    case 'lucas':
-                        message = 'Querido (hermano), sé que no te gustan mis cartas, pero es la única manera que tengo de expresar lo que siento, debido a que soy muy retraído en lo que a emociones se refiere. Últimamente me di cuenta de que te he estado exigiendo mucho para alguien de tu edad. Alguna vez te dije que es porque espero muchas cosas positivas de ti, pero esa es una carga muy grande para un niño de tu edad. Ahora estoy más tranquilo y sé que si haces lo correcto, triunfarás en esta vida, tienes un gran poder en tus manos.';
-                        break;
-                    default:
-                        message = 'Welcome! Here is a general message for all visitors.';
-                }
-                messageElement.textContent = message;
-            } else {
-                messageElement.textContent = 'No name was selected.';
-            }
-        });
+        if (name) {
+          let message;
+          switch (name.toLowerCase()) {
+            case "esteban":
+              message =
+                "Querido Esteban Manríquez Acuña (Papá), mediante esta carta quiero agradecerte por el enorme sacrificio que haces por todos nosotros, por tus ganas de siempre buscar la superación. Me gustaría llegar a convertirme al menos en el 1% del hombre que eres tú. Tenemos mucho tiempo por delante, viejo querido, y espero que nuestro futuro sea toda una experiencia. No todo será perfecto, pero espero que sigamos todos juntos, porque juntos, nadie nos podrá vencer.Te amo mucho y espero poder disfrutar de tu sabiduría por muchos años más.";
+              break;
+            case "alejandra":
+              message =
+                "Querida Alejandra Silva Reyes (Mamá), mediante esta carta quiero desearte muchas gracias por todo lo que haces por nosotros, por tu sacrificio, por tu amor y dedicación en cada una de tus acciones. A pesar de que nos ocultes tus emociones, nosotros las percibimos de todas maneras, no siempre te hemos tratado como te lo mereces y estoy seguro de que nunca seremos perfectos, pero lo que sí te puedo asegurar es la lealtad incondicional que un hijo le puede dar a un padre. Te amo mucho y espero poder disfrutar tu compañía por muchos años más.";
+              break;
+            case "francisca":
+              message =
+                "Querida Francisca Manríquez Silva(Hermana), mediante esta carta quiero felicitarte por tu resiliencia, por tu amistad y por ser un ejemplo a seguir. Sé que llegarás muy lejos en esta vida y que, no importa cuán alta sea la montaña, tú la escalarás. Me gustaría compartir esta hermandad y amistad contigo por muchos años más. Al igual que con Luquitas, me consta que llegarás muy lejos y brillarás más que cualquier estrella en el cielo. Para alcanzar el éxito solo debes cuidar un poco más tu yo interno, porque aparte de eso, si sigues así, te esperará un futuro prometedor.";
+              break;
+            case "lucas":
+              message =
+                "Querido Lucas Manríquez Silva (hermano), sé que no te gustan mis cartas, pero es la única manera que tengo de expresar lo que siento, debido a que soy muy retraído en lo que a emociones se refiere. Últimamente me di cuenta de que te he estado exigiendo mucho para alguien de tu edad. Alguna vez te dije que es porque espero muchas cosas positivas de ti, pero esa es una carga muy grande para un niño de tu edad. Ahora estoy más tranquilo y sé que si haces lo correcto, triunfarás en esta vida, tienes un gran poder en tus manos.";
+              break;
+            default:
+              message = "Welcome! Here is a general message for all visitors.";
+          }
+          messageElement.textContent = message;
+        } else {
+          messageElement.textContent = "No name was selected.";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
