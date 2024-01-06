@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+.container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.content {
+    height: 600px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.gridContainer {
+    display: grid;
+    border: solid 5px black;
+    border-radius: 10px;
+    grid-template-rows: 150px 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100%;
+    place-items: center;
+}
+
+.input {
+    display: flex;
+    grid-column: 1/5;
+    font-size: 77px; 
+    width: 100%;
+    height: 102%;
+    background: #2B2D2F;
+    text-align: right;
+    color: #E7E7E7;
+    align-items: center;
+    justify-content: right;
+    border-radius: 1px;
+    padding: 5px;
+    flex-wrap: wrap;
+    
+}
+
+
+
+.btns {
+    display: flex;
+    width: 90px;
+    height: 88px;
+    border: black solid 1px;
+    justify-content: center;
+}
+
+.btns button {
+    background: #5F6062;
+    display: flex;
+    font-weight: bold;
+    border: solid 1px black;
+    font-size: 25px;
+    height: 88px;
+    min-width: 98px;
+    max-width: 20px;
+    flex-wrap: wrap;
+    color: #E7E7E7;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.first {
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.second {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    margin-bottom: 88px;
+}
+
+.third {
+    grid-row: 2/3;
+    grid-column: 3/4;
+}
+
+.fourth {
+    grid-row: 2/3;
+    grid-column: 4/5;
+}
+
+
+.zero button {
+    display: flex;
+    background: orange;
+    grid-column: 2/3;
+    min-width: 195px;
+    justify-items: center;
+    margin-left: 98px;
+}
+
+.gray button {
+    background-color: #3F4143;
+}
+
+.orange button {
+    background: #FF9F0C;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.hidden {
+    display: none;
+}
+
+.sign {
+    font-size: 40px;
+    margin-bottom: 90px;
+    color:#E7E7E7;
+}
